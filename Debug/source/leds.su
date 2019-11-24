@@ -1,0 +1,13 @@
+fsl_clock.h:724:20:CLOCK_EnableClock	24	static
+fsl_port.h:346:20:PORT_SetPinMux	24	static
+fsl_dmamux.h:76:20:DMAMUX_EnableChannel	16	static
+fsl_dmamux.h:106:20:DMAMUX_SetSource	24	static
+leds.c:99:6:DSPI0_Callback	24	static
+leds.c:105:6:DSPI1_Callback	24	static
+leds.c:111:6:DSPI2_Callback	24	static
+leds.c:118:6:Update	8	static
+leds.c:132:6:initEdma	64	static
+leds.c:256:6:initDspi	48	static
+leds.c:329:6:set_led_strip	32	static
+leds.c:348:6:setLed	40	static
+leds.c:366:6:initLeds	24	static

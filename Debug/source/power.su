@@ -1,0 +1,7 @@
+fsl_clock.h:724:20:CLOCK_EnableClock	24	static
+fsl_port.h:346:20:PORT_SetPinMux	24	static
+fsl_gpio.h:173:20:GPIO_PortSet	16	static
+fsl_gpio.h:184:20:GPIO_PortClear	16	static
+power.c:15:6:initPower	16	static
+power.c:33:6:EnablePower	8	static
+power.c:37:6:DisablePower	8	static

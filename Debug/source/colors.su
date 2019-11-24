@@ -1,0 +1,2 @@
+colors.c:14:10:HsvToRgb	32	static
+colors.c:59:10:RgbToHsv	32	static

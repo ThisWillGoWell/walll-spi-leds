@@ -1,0 +1,698 @@
+/*
+ * pattern.c
+ *
+ *  Created on: Jun 17, 2019
+ *      Author: wggowell
+ */
+
+
+#include "pattern.h"
+#include "colors.h"
+#include "leds.h"
+#include "utils.h"
+#include "clock_config.h"
+#include "msgeq07.h"
+#include "power.h"
+#include "random.h"
+#include "controller.h"
+#include "cursor.h"
+#include "linetetris.h"
+#define DELAY 10U
+#define UPDATES_PER_SECOND 1000U / DELAY
+#define AUDIO_DELAY 0.5
+
+#define AUDIO_DELAY_BUFFER_LEN 1
+
+
+
+/*****************************************************************************
+ * Helper Prototypes
+*****************************************************************************/
+void setLedHsv(int tube, uint32_t i, HsvColor c);
+void setLedRgb(int tube, uint32_t i, RgbColor c);
+
+/*****************************************************************************
+ * Patterns
+*****************************************************************************/
+void rainbowPattern(uint32_t count);
+void fade(uint32_t count );
+void randomLight(uint32_t count);
+void steroMiddleVuMeter(uint32_t counter);
+void monoVuMeter(uint32_t counter);
+void secondTrySpectrum(uint32_t counter);
+void sparkelPattern(uint32_t counter);
+void fadeOff(uint32_t counter);
+void brightnessTestPattern(uint32_t counter);
+void theaterChase(uint32_t counter);
+void line(uint32_t counter);
+void fade_all_and_set(uint8_t amount);
+void rainbowPatternSpeed(uint32_t amount);
+void steroVuMeter(uint32_t count);
+void testPattern(uint32_t count);
+void RandomPatterns(uint32_t count);
+void RandomColorWhipe(uint32_t count);
+void theaterChase2(uint32_t count);
+uint32_t currentDelay;
+
+uint8_t brightness;
+
+/*****************************************************************************
+ * variables
+*****************************************************************************/
+uint8_t gamma[256] = {
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+		1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4,
+		4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8,
+		8, 8, 9, 9, 9, 10, 10, 10, 11, 11, 12, 12, 12, 13, 13, 14,
+		14, 15, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 22,
+		22, 23, 23, 24, 25, 25, 26, 26, 27, 28, 28, 29, 30, 30, 31, 32,
+		33, 33, 34, 35, 36, 36, 37, 38, 39, 40, 40, 41, 42, 43, 44, 45,
+		46, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+		61, 62, 63, 64, 65, 67, 68, 69, 70, 71, 72, 73, 75, 76, 77, 78,
+		80, 81, 82, 83, 85, 86, 87, 89, 90, 91, 93, 94, 95, 97, 98, 99,
+		101, 102, 104, 105, 107, 108, 110, 111, 113, 114, 116, 117, 119, 121, 122, 124,
+		125, 127, 129, 130, 132, 134, 135, 137, 139, 141, 142, 144, 146, 148, 150, 151,
+		153, 155, 157, 159, 161, 163, 165, 166, 168, 170, 172, 174, 176, 178, 180, 182,
+		184, 186, 189, 191, 193, 195, 197, 199, 201, 204, 206, 208, 210, 212, 215, 217,
+		219, 221, 224, 226, 228, 231, 233, 235, 238, 240, 243, 245, 248, 250, 253, 255
+	};
+
+HsvColor hsv;
+uint32_t clockCounter;
+uint32_t g_systickCounter;
+
+RgbColor currentLedsRgb[NUM_TUBES][LEDS_PER_TUBE];
+HsvColor currentLedsHsv[NUM_TUBES][LEDS_PER_TUBE];
+
+/*****************************************************************************
+ * Helper Functionsoff
+*****************************************************************************/
+void SysTick_Handler(void)
+{
+	if (g_systickCounter != 0U)
+	{
+		g_systickCounter--;
+	}
+
+}
+
+void SysTick_DelayTicks(uint32_t n)
+{
+    g_systickCounter = n;
+    while(g_systickCounter != 0U)
+    {
+    }
+}
+
+void setLedHsv(int tube, uint32_t i, HsvColor hsv){
+//	if(tube == -1 ){
+//		tube = i / LEDS_PER_TUBE;
+//	} else if(tube%2) {
+//		i = LEDS_PER_TUBE - i - 1;
+//	}
+
+	currentLedsHsv[tube][i] = hsv;
+	RgbColor c = HsvToRgb(hsv);
+//	i = tube * LEDS_PER_TUBE + i;
+	setLed(tube, i, c.r, c.g, c.b);
+}
+
+void setLedRgb(int tube, uint32_t i, RgbColor c){
+	// odd tubes are reversed indexed
+//	if(tube%2) {
+//		i = LEDS_PER_TUBE - i - 1;
+//	}
+	currentLedsRgb[tube][i] = c;
+	//i = tube * LEDS_PER_TUBE + i;
+	//
+
+	//setLed(i, gamma[c.r], gamma[c.g], gamma[c.b]);
+	setLed(tube, i, c.r, c.g, c.b);
+}
+
+
+void initPatterns(){
+	SysTick_Config(SystemCoreClock / 1000U);
+
+}
+/*
+ *       off_mode_num = 0
+        rainbow_mode_num = 1
+        sparkle_mode_num = 2
+        theater_mode_num = 3
+        aux_mode_num = 4
+        mic_mode_num = 5
+        test_brightness_mode_num = 6
+        test_color_mode_num = 7
+        test_write_speed = 8
+ */
+
+// Patterns
+#define num_patterns 3
+PatternFunc patterns[] = {
+		RandomPatterns,
+		rainbowPattern,
+		monoVuMeter
+};
+
+RgbColor brightness_currentRgb;
+void brightnessTestPattern(uint32_t counter){
+	int i;
+//
+//	brightness_currentRgb.r = counter % 256;
+//	brightness_currentRgb.g = counter % 256;
+//	brightness_currentRgb.b = counter % 256;
+//
+//	for(int i=0;i<NUM_LEDS;i++){
+//		setLedRgb(i, brightness_currentRgb);
+//	}
+//
+//	if(counter % 20 == 0 || counter % 255 == 0){
+//		for(i =0; i< 10000000; i++){
+//
+//		}
+//			i = 0;
+//	}
+
+}
+
+
+
+void fadeOff(uint32_t counter){
+	if(counter % 20 == 0){
+		fade_all_and_set(1);
+	}
+}
+
+int delay = 10;
+void runPatterns(){
+	while(1){
+		//rainbowPattern(clockCounter);
+		patterns[bound_uint8(getMode(), 0, num_patterns-1)](clockCounter);
+		SysTick_DelayTicks(delay); //delay 10 ms
+		clockCounter += 1;
+
+	}
+}
+
+PatternFunc randomPatterns[] ={
+	theaterChase2,
+	cursor,
+	LineTettris,
+	rainbowPattern,
+	sparkelPattern,
+
+};
+
+int currentRandom = 0;
+void RandomPatterns(uint32_t count){
+	if(count % 12000 == 0){
+		currentRandom = (currentRandom +1) % 5;
+	}
+	randomPatterns[currentRandom](count);
+}
+
+//Pattern rainbow = { 10, rainbowPattern };
+
+void rainbowPattern( uint32_t count){
+	uint8_t startHue = count % 255;
+	uint8_t downDelta = 255 / NUM_TUBES * 2;
+	uint8_t sideDelta = 255 / LEDS_PER_TUBE * 2;
+
+
+	hsv.v = 50;
+	hsv.s = 255;
+
+	for(int t=0;t<NUM_TUBES; t++){
+		hsv.h = startHue + (t * downDelta);
+		for(int i=0;i<LEDS_PER_TUBE ;i++){
+			setLedHsv(t, i, hsv);
+			hsv.h += sideDelta;
+		}
+	}
+}
+
+void rainbowPatternSpeed( uint32_t count){
+	uint8_t startHue = count % 255;
+	uint8_t downDelta = 255 / NUM_TUBES * 2;
+	uint8_t sideDelta = 255 / LEDS_PER_TUBE * 2;
+
+
+	hsv.v = 20;
+	hsv.s = 255;
+
+	for(int t=0;t<NUM_TUBES; t++){
+		hsv.h = startHue + (t * downDelta);
+		for(int i=0;i<LEDS_PER_TUBE ;i++){
+			setLedHsv(t, i, hsv);
+			hsv.h += sideDelta;
+		}
+	}
+}
+
+void testPattern(uint32_t count){
+	//fade_all_and_set();
+	hsv.v = 25;
+	hsv.s = 255;
+	hsv.h = 0;
+	HsvColor off;
+	fade_all_and_set(10);
+
+	for(int tube=0;tube<NUM_TUBES;tube++){
+		setLedHsv(tube, LEDS_PER_TUBE/2, hsv);
+	}
+
+	for(int tube=0;tube<NUM_TUBES-3; tube+=3){
+		hsv.h += 20;
+		setLedHsv(tube, count%LEDS_PER_TUBE, hsv);
+		setLedHsv(tube+1, count%LEDS_PER_TUBE, hsv);
+		setLedHsv(tube+2, count%LEDS_PER_TUBE, hsv);
+	}
+	if(count > 3){
+		count -= 3;
+	}
+	for(int tube=0;tube<NUM_TUBES-3; tube+=3){
+
+			setLedHsv(tube, count%LEDS_PER_TUBE, off);
+			setLedHsv(tube+1, count%LEDS_PER_TUBE, off);
+			setLedHsv(tube+2, count%LEDS_PER_TUBE, off);
+
+
+	}
+
+}
+
+
+void raidalRainbow(uint32_t count){
+	hsv.h = count%255;
+	hsv.v = 50;
+	hsv.s = 255;
+	for(int i=0;i<LEDS_PER_TUBE/2;i++){
+
+		setLedHsv(i, count % LEDS_PER_TUBE, hsv);
+	}
+}
+
+
+void line(uint32_t count){
+	hsv.v = 100;
+	fade_all_and_set(10);
+	//hsv.h = count % 255;
+	hsv.s = 255;
+	for(int i=0;i<NUM_TUBES;i++){
+		setLedHsv(i, count % LEDS_PER_TUBE, hsv);
+	}
+}
+
+void theaterChase(uint32_t count){
+
+	fade_all_and_set(20);
+	hsv.v = 100;
+	hsv.h = count % 255;
+	hsv.s = 255;
+
+	for(int tube=0;tube<NUM_TUBES;tube++){
+		setLedHsv(tube, (count+ tube * 3) % LEDS_PER_TUBE , hsv);
+	}
+}
+
+void theaterChase2(uint32_t count){
+
+	fade_all_and_set(15);
+	hsv.v = 100;
+	hsv.h = count % 255;
+	hsv.s = 255;
+
+	for(int tube=0;tube<NUM_TUBES;tube++){
+		hsv.h += 5;
+		setLedHsv(tube, (count+ tube * 3) % LEDS_PER_TUBE , hsv);
+
+	}
+}
+
+
+void fade_all_and_set(uint8_t amount){
+	HsvColor current;
+	for(int tube=0;tube<NUM_TUBES;tube++){
+
+		for(int i=0; i<LEDS_PER_TUBE; i++){
+			current = currentLedsHsv[tube][i];
+			if(amount >= current.v){
+				current.v = 0;
+			}else{
+				current.v -= amount;
+			}
+			setLedHsv(tube, i, current);
+		}
+	}
+
+}
+
+HsvColor sparkle_currentHsv = {0, 255, 0};
+
+void sparkelPattern(uint32_t counter){
+	for(int i=0; i < (counter % 10); i++) {
+		sparkle_currentHsv.v = get_rand_uint8_range(100, 200);
+		sparkle_currentHsv.h = get_rand_uint8_range(0, 255);
+
+		setLedHsv(get_rand_uint8_range(0, NUM_TUBES),  get_rand_uint32_range(0, LEDS_PER_TUBE), sparkle_currentHsv);
+	}
+	fade_all_and_set(5);
+}
+
+
+
+
+uint32_t currentSpectrum[7] = {0};
+uint32_t enhansedSpectrum[13] = {0};
+uint32_t currentEnhansedSpectrum[13] = {0};
+
+uint32_t currentValue = 0;
+HsvColor currentHsv;
+int currentIndex;
+
+int currentBufferIndex = 0;
+
+uint32_t spectrumBuffer[AUDIO_DELAY_BUFFER_LEN][7];
+
+
+void steroVuMeterMiddleCallback(uint32_t spectrum[]){
+	HsvColor off;
+
+	hsv.v = 20;
+	hsv.s = 255;
+	hsv.h = 0;
+
+	uint8_t hueDelta = (255 / (NUM_TUBES + 1));
+	int middle = LEDS_PER_TUBE / 2;
+	int tube = 0;
+	for(int freq=0;freq<14;freq+=2){
+
+		uint32_t amountOnLeft = map_uint32(spectrum[freq], 800, 4096, 0, middle -1 );
+		uint32_t amountOnRight = map_uint32(spectrum[freq + 1 ], 800, 4096, 0, middle -1 );
+		for(int i=0; i<LEDS_PER_TUBE; i++){
+			if(i < amountOnLeft || i > LEDS_PER_TUBE - amountOnRight){
+				setLedHsv(tube, i, hsv);
+				setLedHsv(tube+1, i, hsv);
+
+			} else {
+				setLedHsv(tube, i, off);
+				setLedHsv(tube+1, i, off);
+			}
+		}
+		tube += 2;
+		hsv.h += hueDelta;
+
+	}
+}
+
+
+void steroMiddleVuMeter(uint32_t counter){
+	getFrequency(steroVuMeterMiddleCallback);
+}
+
+
+void monoVuMeterMiddleCallback(uint32_t spectrum[]){
+	HsvColor off;
+
+	hsv.v = 150;
+	hsv.s = 255;
+	hsv.h = 0;
+	int j;
+	uint8_t hueDelta = (255 / (NUM_TUBES + 1));
+	int middle = LEDS_PER_TUBE / 2;
+	int tube = 0;
+
+	//decay whats already there
+	fade_all_and_set(25);
+
+	for(int freq=0;freq<14;freq+=2){
+
+		uint32_t amountOn = map_uint32(spectrum[freq], 500, 4096, 0, middle -1 );
+		uint32_t amountOnRight = map_uint32(spectrum[freq + 1 ], 500, 4096, 0, middle -1 );
+		if(amountOnRight > amountOn){
+			amountOn = amountOnRight;
+		}
+		for(int i=0; i<LEDS_PER_TUBE; i++){
+			if(i >= middle - amountOn && i < middle + amountOn){
+				setLedHsv(tube, i, hsv);
+				setLedHsv(tube+1, i, hsv);
+				setLedHsv(tube+2, i, hsv);
+				setLedHsv(tube+3, i, hsv);
+				//setLedHsv(tube+4, i, hsv);
+
+
+
+			} else {
+//				setLedHsv(tube, i, off);
+//				setLedHsv(tube+1, i, off);
+			}
+		}
+		tube += 5;
+		hsv.h += hueDelta*3;
+	}
+
+}
+
+
+void monoVuMiddleMeter(uint32_t counter){
+	getFrequency(monoVuMeterMiddleCallback);
+}
+
+
+void monoVuMeterCallback(uint32_t spectrum[]){
+	hsv.v = 150;
+		hsv.s = 255;
+		hsv.h = 0;
+		uint8_t hueDelta = (255 / (NUM_TUBES + 1));
+		int tube = 0;
+
+
+		//decay whats already there
+		fade_all_and_set(25);
+
+		for(int freq=0;freq<14;freq+=2){
+
+			uint32_t amountOnLeft = map_uint32(spectrum[freq +1], 500, 4096, 0, LEDS_PER_TUBE );
+			uint32_t amountOnRight = map_uint32(spectrum[freq +1], 500, 4096, 0, LEDS_PER_TUBE);
+
+			for(int i=0; i<LEDS_PER_TUBE; i++){
+
+				if(i < amountOnLeft){
+					setLedHsv(tube, i, hsv);
+					setLedHsv(tube+1, i, hsv);
+				} else {
+	//				setLedHsv(tube, i, off);
+	//				setLedHsv(tube+1, i, off);
+				}
+
+				if(i < amountOnRight){
+					setLedHsv(NUM_TUBES - tube -1 -3, i, hsv);
+					setLedHsv(NUM_TUBES - tube -2 -3, i, hsv);
+
+				} else {
+	//				setLedHsv(tube, i, off);
+	//				setLedHsv(tube+1, i, off);
+				}
+			}
+			tube += 3;
+			hsv.h += hueDelta*3;
+		}
+
+}
+
+
+void monoVuMeter(uint32_t counter){
+	getFrequency(monoVuMeterCallback);
+}
+
+
+void steroVuMeterCallback(uint32_t spectrum[]){
+	hsv.v = 150;
+	hsv.s = 255;
+	hsv.h = 0;
+	uint8_t hueDelta = (255 / (NUM_TUBES + 1));
+	int tube = 0;
+
+	//decay whats already there
+	fade_all_and_set(25);
+
+	for(int freq=0;freq<14;freq+=2){
+
+		uint32_t amountOnLeft = map_uint32(spectrum[freq], 500, 4096, 0, LEDS_PER_TUBE );
+		uint32_t amountOnRight = map_uint32(spectrum[freq + 1 ], 500, 4096, 0, LEDS_PER_TUBE);
+
+		for(int i=0; i<LEDS_PER_TUBE; i++){
+
+			if(i < amountOnLeft){
+				setLedHsv(tube, i, hsv);
+				setLedHsv(tube+1, i, hsv);
+			} else {
+//				setLedHsv(tube, i, off);
+//				setLedHsv(tube+1, i, off);
+			}
+
+			if(i < amountOnRight){
+				setLedHsv(NUM_TUBES - tube -1 -3, i, hsv);
+				setLedHsv(NUM_TUBES - tube -2 -3, i, hsv);
+
+			} else {
+//				setLedHsv(tube, i, off);
+//				setLedHsv(tube+1, i, off);
+			}
+		}
+		tube += 3;
+		hsv.h += hueDelta*3;
+	}
+
+}
+
+
+void steroVuMeter(uint32_t counter){
+	getFrequency(steroVuMeterCallback);
+}
+
+
+
+
+#define UPPER_THREASHOLD 1000
+#define LOWER_THREASHOLD 500 // same as noise floor
+
+#define LEDS_PER_BAND 10
+// two state machine
+#define SPECTRUM_POP_STATE_ACTIVE_LOW 1
+#define SPECTRUM_POP_STATE_ACTIVE_HIGH 2
+#define NEW_LEDS 3
+
+//uint8_t sepctrumPopStates[14] = {SPECTRUM_PROCESSOR_STATE_IDLE}; // one state for each band
+//uint32_t spectrumPopLeds[14][LEDS_PER_BAND] = {0}; // place to store the leds currenly being tracked
+//HsvColor spectrumPopHsv[14];
+//
+//void spectrumProcessStateMachine(uint8_t currentState, uint32_t spectrumValue ){
+//
+//}
+//
+//void specrumPopWriteLeds(){
+//
+//}
+//
+//void spectrumPopCallback(uint32_t spectrum[]){
+//	for(int i=0;i<14;i++){
+//		if( sepctrumPopSta esstate == SPECTRUM_POP_STATE_ACTIVE_LOW && spectrum[i] > UPPER_THREASHOLD){
+//			state = SPECTRUM_POP_STATE_ACTIVE_HIGH;
+//		} else if( state == SPECTRUM_POP_STATE_ACTIVE_HIGH && sepctrum[i] < LOWER_THREASHOLD){
+//			// pick new leds
+//			populdateRandomArray(spectrumPopLeds[i], LEDS_PER_BAND, 0, NUM_LEDS);
+//			state = SPECTRUM_POP_STATE_ACTIVE_LOW;
+//		}
+//		for(int j=0;j<LEDS_PER_BAND;j++){
+//			spectrumPopHsv[i].v = map_uint32(spectrum[freq], 500, 4096, 0, 255);
+//			setLedHsv(-1, spectrumPopLeds[i][j], spectrumPopHsv[i]);
+//		}
+//	}
+//}
+//
+//void spectrumPop(uint32_t spectrum[]){
+//
+//}
+
+
+
+////	int i;
+//	uint32_t decay;
+//	for(i = 0; i<6;i++){
+//		if(spectrumBuffer[currentBufferIndex] [i] < 800){
+//			spectrumBuffer[currentBufferIndex] [i] = 0;
+//		}
+//		enhansedSpectrum[i*2]= spectrumBuffer[currentBufferIndex] [i];
+//		//enhansedSpectrum[i*2+1] = spectrumBuffer[currentBufferIndex] [i]/2 ;
+//		if(i != 0){
+//			//enhansedSpectrum[i*2-1] += spectrumBuffer[currentBufferIndex] [i]/2;
+//		}
+//		spectrumBuffer[currentBufferIndex][i] = spectrum[i];
+//	}
+//	currentBufferIndex = (currentBufferIndex + 1) % AUDIO_DELAY_BUFFER_LEN;
+//
+//	hsv.s = 255;
+//	for(i=0; i<13;i++){
+//		if(enhansedSpectrum[i] > currentEnhansedSpectrum[i]){
+//			currentEnhansedSpectrum[i] = enhansedSpectrum[i];
+//		} else {
+//			// current specturm = current specturm [99-90]%
+//			// the higher the number, the slower the decay
+//			if(currentEnhansedSpectrum[i] != 0){
+//				decay = (currentEnhansedSpectrum[i] * (120 - map_uint32(currentEnhansedSpectrum[i], 0, 4096, 20, 120))) / 1000;
+//				if(decay > currentEnhansedSpectrum[i]){
+//					currentEnhansedSpectrum[i] = 0;
+//				}else{
+//					currentEnhansedSpectrum[i] -= decay;
+//				}
+//
+//			}
+//		}
+//		//hsv.v = currentEnhansedSpectrum[i] >> 4U;
+//
+//		currentIndex = 4 + i*5;
+//		hsv.v = currentEnhansedSpectrum[i] >> 4U; // spectrum is 0-4095, so to map it to 0-255 shift it over 4 (divide by 16)
+////		if(hsv.v < 50){
+////			hsv.v = 50;
+////		}
+//		hsv.h = 255 - (255 * i / 13);
+//		setLedHsv(currentIndex, hsv);
+//		hsv.v = hsv.v >> 1;
+//		setLedHsv(currentIndex-1, hsv);
+//		setLedHsv(currentIndex+1, hsv);
+////		hsv.v = hsv.v >> 2;
+////		setLedHsv(currentIndex-2, hsv);
+////		setLedHsv(currentIndex+2, hsv);
+////		hsv.v = hsv.v >> 1;
+////		setLedHsv(currentIndex-3, hsv);
+//////		setLedHsv(currentIndex+3, hsv);
+//	}
+
+uint8_t currentStart;
+uint8_t currentEnd;
+uint8_t currentOffset;
+
+void RandomColorWhipe( uint32_t count){
+	if(count%10000 == 0){
+		currentOffset = get_rand_uint8_range(0, 255);
+		currentStart = get_rand_uint8_range(0, 255);
+		currentEnd = get_rand_uint8_range(0, 255);
+		if(currentStart > currentEnd){
+			uint8_t temp = currentStart;
+			currentStart = currentEnd;
+			currentEnd = temp;
+		}
+	}
+	ColorWhipe(count);
+}
+
+void ColorWhipe(uint32_t counter ){
+	hsv.v = 100;
+	hsv.h = currentStart;
+
+	// range is going to be between currentStart and current End
+	hsv.h = (counter % (currentEnd - currentStart)) + currentStart;
+	hsv.s = 255;
+
+	for(int t=0;t<NUM_TUBES;t++){
+		for(int i=0;i<LEDS_PER_TUBE; i++){
+
+			hsv.h += (currentEnd-currentStart) / LEDS_PER_TUBE;
+			if(hsv.h > currentEnd){
+				hsv.h = currentStart;
+			}
+		}
+	}
+
+
+}
+
+
+
+
+
+
+

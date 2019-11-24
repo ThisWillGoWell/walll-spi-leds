@@ -1,0 +1,5 @@
+random.c:15:6:initRgna	8	static
+random.c:20:10:get_rand_uint32	16	static
+random.c:33:9:get_rand_uint8	16	static
+random.c:47:10:get_rand_uint32_range	16	static
+random.c:51:10:get_rand_uint8_range	16	static

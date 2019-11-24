@@ -1,0 +1,2 @@
+utils.c:11:10:map_uint32	24	static
+utils.c:21:9:bound_uint8	16	static
