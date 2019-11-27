@@ -537,9 +537,9 @@ Discarded input sections
                 0x0000000000000000        0x1 ./source/pattern.o
  .data.gamma    0x0000000000000000      0x100 ./source/pattern.o
  .bss.currentLedsRgb
-                0x0000000000000000     0x27d8 ./source/pattern.o
+                0x0000000000000000      0xa20 ./source/pattern.o
  .text.setLedRgb
-                0x0000000000000000       0x4c ./source/pattern.o
+                0x0000000000000000       0x50 ./source/pattern.o
  .bss.brightness_currentRgb
                 0x0000000000000000        0x3 ./source/pattern.o
  .text.brightnessTestPattern
@@ -548,12 +548,12 @@ Discarded input sections
  .text.rainbowPatternSpeed
                 0x0000000000000000       0x98 ./source/pattern.o
  .text.testPattern
-                0x0000000000000000      0x140 ./source/pattern.o
+                0x0000000000000000       0xf0 ./source/pattern.o
  .text.raidalRainbow
-                0x0000000000000000       0x70 ./source/pattern.o
- .text.line     0x0000000000000000       0x5c ./source/pattern.o
+                0x0000000000000000       0x60 ./source/pattern.o
+ .text.line     0x0000000000000000       0x48 ./source/pattern.o
  .text.theaterChase
-                0x0000000000000000       0x84 ./source/pattern.o
+                0x0000000000000000       0x70 ./source/pattern.o
  .bss.currentSpectrum
                 0x0000000000000000       0x1c ./source/pattern.o
  .bss.enhansedSpectrum
@@ -591,7 +591,7 @@ Discarded input sections
  .text.RandomColorWhipe
                 0x0000000000000000       0x90 ./source/pattern.o
  .text.ColorWhipe
-                0x0000000000000000       0xc0 ./source/pattern.o
+                0x0000000000000000       0xb8 ./source/pattern.o
  .debug_macro   0x0000000000000000      0xad2 ./source/pattern.o
  .debug_macro   0x0000000000000000       0x10 ./source/pattern.o
  .debug_macro   0x0000000000000000      0x12e ./source/pattern.o
@@ -3359,7 +3359,7 @@ END GROUP
                 0x0000000014001000                __top_FLEX_RAM = 0x14001000
                 0x0000000014001000                __top_RAM3 = 0x14001000
 
-.text           0x0000000000000000     0xbc50
+.text           0x0000000000000000     0xbc40
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -3369,19 +3369,19 @@ END GROUP
                 0x00000000000001d0                . = ALIGN (0x4)
                 0x00000000000001d0                __section_table_start = .
                 0x00000000000001d0                __data_section_table = .
-                0x00000000000001d0        0x4 LONG 0xbc50 LOADADDR (.data)
+                0x00000000000001d0        0x4 LONG 0xbc40 LOADADDR (.data)
                 0x00000000000001d4        0x4 LONG 0x20000000 ADDR (.data)
                 0x00000000000001d8        0x4 LONG 0x60 SIZEOF (.data)
-                0x00000000000001dc        0x4 LONG 0xbc50 LOADADDR (.data_RAM2)
+                0x00000000000001dc        0x4 LONG 0xbc40 LOADADDR (.data_RAM2)
                 0x00000000000001e0        0x4 LONG 0x1fff0000 ADDR (.data_RAM2)
                 0x00000000000001e4        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x00000000000001e8        0x4 LONG 0xbc50 LOADADDR (.data_RAM3)
+                0x00000000000001e8        0x4 LONG 0xbc40 LOADADDR (.data_RAM3)
                 0x00000000000001ec        0x4 LONG 0x14000000 ADDR (.data_RAM3)
                 0x00000000000001f0        0x4 LONG 0x0 SIZEOF (.data_RAM3)
                 0x00000000000001f4                __data_section_table_end = .
                 0x00000000000001f4                __bss_section_table = .
                 0x00000000000001f4        0x4 LONG 0x20000060 ADDR (.bss)
-                0x00000000000001f8        0x4 LONG 0x9f80 SIZEOF (.bss)
+                0x00000000000001f8        0x4 LONG 0x2eb0 SIZEOF (.bss)
                 0x00000000000001fc        0x4 LONG 0x1fff0000 ADDR (.bss_RAM2)
                 0x0000000000000200        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
                 0x0000000000000204        0x4 LONG 0x14000000 ADDR (.bss_RAM3)
@@ -3541,57 +3541,57 @@ END GROUP
  .text.setLed   0x0000000000000f48      0x104 ./source/leds.o
                 0x0000000000000f48                setLed
  .text.initLeds
-                0x000000000000104c      0x15c ./source/leds.o
+                0x000000000000104c      0x158 ./source/leds.o
                 0x000000000000104c                initLeds
  .text.LineTettris
-                0x00000000000011a8      0x2f0 ./source/linetetris.o
-                0x00000000000011a8                LineTettris
+                0x00000000000011a4      0x2f0 ./source/linetetris.o
+                0x00000000000011a4                LineTettris
  .text.__NVIC_EnableIRQ
-                0x0000000000001498       0x3c ./source/msgeq07.o
+                0x0000000000001494       0x3c ./source/msgeq07.o
  .text.CLOCK_SetTpmClock
-                0x00000000000014d4       0x3c ./source/msgeq07.o
+                0x00000000000014d0       0x3c ./source/msgeq07.o
  .text.ADC16_GetChannelConversionValue
-                0x0000000000001510       0x2c ./source/msgeq07.o
+                0x000000000000150c       0x2c ./source/msgeq07.o
  .text.ADC1_IRQHandler
-                0x000000000000153c       0x94 ./source/msgeq07.o
-                0x000000000000153c                ADC1_IRQHandler
+                0x0000000000001538       0x94 ./source/msgeq07.o
+                0x0000000000001538                ADC1_IRQHandler
  .text.TPM2_IRQHandler
-                0x00000000000015d0       0x68 ./source/msgeq07.o
-                0x00000000000015d0                TPM2_IRQHandler
+                0x00000000000015cc       0x68 ./source/msgeq07.o
+                0x00000000000015cc                TPM2_IRQHandler
  .text.getFrequency
-                0x0000000000001638       0x38 ./source/msgeq07.o
-                0x0000000000001638                getFrequency
+                0x0000000000001634       0x38 ./source/msgeq07.o
+                0x0000000000001634                getFrequency
  .text.initMsgeq07Timer
-                0x0000000000001670       0x40 ./source/msgeq07.o
-                0x0000000000001670                initMsgeq07Timer
+                0x000000000000166c       0x40 ./source/msgeq07.o
+                0x000000000000166c                initMsgeq07Timer
  .text.initMsgEq07Pins
-                0x00000000000016b0       0x68 ./source/msgeq07.o
-                0x00000000000016b0                initMsgEq07Pins
+                0x00000000000016ac       0x68 ./source/msgeq07.o
+                0x00000000000016ac                initMsgEq07Pins
  .text.initMsgeq07Adc
-                0x0000000000001718       0x80 ./source/msgeq07.o
-                0x0000000000001718                initMsgeq07Adc
+                0x0000000000001714       0x80 ./source/msgeq07.o
+                0x0000000000001714                initMsgeq07Adc
  .text.setNextTimerInterrupt
-                0x0000000000001798       0x68 ./source/msgeq07.o
-                0x0000000000001798                setNextTimerInterrupt
+                0x0000000000001794       0x68 ./source/msgeq07.o
+                0x0000000000001794                setNextTimerInterrupt
  .text.setStrobePin
-                0x0000000000001800       0x34 ./source/msgeq07.o
-                0x0000000000001800                setStrobePin
+                0x00000000000017fc       0x34 ./source/msgeq07.o
+                0x00000000000017fc                setStrobePin
  .text.setResetPin
-                0x0000000000001834       0x30 ./source/msgeq07.o
-                0x0000000000001834                setResetPin
+                0x0000000000001830       0x30 ./source/msgeq07.o
+                0x0000000000001830                setResetPin
  .text.__NVIC_SetPriority
-                0x0000000000001864       0x54 ./source/pattern.o
+                0x0000000000001860       0x54 ./source/pattern.o
  .text.SysTick_Config
-                0x00000000000018b8       0x44 ./source/pattern.o
+                0x00000000000018b4       0x44 ./source/pattern.o
  .text.SysTick_Handler
-                0x00000000000018fc       0x24 ./source/pattern.o
-                0x00000000000018fc                SysTick_Handler
+                0x00000000000018f8       0x24 ./source/pattern.o
+                0x00000000000018f8                SysTick_Handler
  .text.SysTick_DelayTicks
-                0x0000000000001920       0x28 ./source/pattern.o
-                0x0000000000001920                SysTick_DelayTicks
+                0x000000000000191c       0x28 ./source/pattern.o
+                0x000000000000191c                SysTick_DelayTicks
  .text.setLedHsv
-                0x0000000000001948       0x64 ./source/pattern.o
-                0x0000000000001948                setLedHsv
+                0x0000000000001944       0x68 ./source/pattern.o
+                0x0000000000001944                setLedHsv
  .text.initPatterns
                 0x00000000000019ac       0x24 ./source/pattern.o
                 0x00000000000019ac                initPatterns
@@ -3605,1096 +3605,1096 @@ END GROUP
                 0x0000000000001a7c       0x98 ./source/pattern.o
                 0x0000000000001a7c                rainbowPattern
  .text.theaterChase2
-                0x0000000000001b14       0x90 ./source/pattern.o
+                0x0000000000001b14       0x7c ./source/pattern.o
                 0x0000000000001b14                theaterChase2
  .text.fade_all_and_set
-                0x0000000000001ba4       0x80 ./source/pattern.o
-                0x0000000000001ba4                fade_all_and_set
+                0x0000000000001b90       0x84 ./source/pattern.o
+                0x0000000000001b90                fade_all_and_set
  .text.sparkelPattern
-                0x0000000000001c24       0x84 ./source/pattern.o
-                0x0000000000001c24                sparkelPattern
+                0x0000000000001c14       0x84 ./source/pattern.o
+                0x0000000000001c14                sparkelPattern
  .text.monoVuMeterCallback
-                0x0000000000001ca8      0x100 ./source/pattern.o
-                0x0000000000001ca8                monoVuMeterCallback
+                0x0000000000001c98      0x100 ./source/pattern.o
+                0x0000000000001c98                monoVuMeterCallback
  .text.monoVuMeter
-                0x0000000000001da8       0x1c ./source/pattern.o
-                0x0000000000001da8                monoVuMeter
+                0x0000000000001d98       0x1c ./source/pattern.o
+                0x0000000000001d98                monoVuMeter
  .text.initPower
-                0x0000000000001dc4       0x5c ./source/power.o
-                0x0000000000001dc4                initPower
+                0x0000000000001db4       0x5c ./source/power.o
+                0x0000000000001db4                initPower
  .text.EnablePower
-                0x0000000000001e20       0x14 ./source/power.o
-                0x0000000000001e20                EnablePower
+                0x0000000000001e10       0x14 ./source/power.o
+                0x0000000000001e10                EnablePower
  .text.DisablePower
-                0x0000000000001e34       0x14 ./source/power.o
-                0x0000000000001e34                DisablePower
+                0x0000000000001e24       0x14 ./source/power.o
+                0x0000000000001e24                DisablePower
  .text.initRgna
-                0x0000000000001e48       0x14 ./source/random.o
-                0x0000000000001e48                initRgna
+                0x0000000000001e38       0x14 ./source/random.o
+                0x0000000000001e38                initRgna
  .text.get_rand_uint32
-                0x0000000000001e5c       0x3c ./source/random.o
-                0x0000000000001e5c                get_rand_uint32
+                0x0000000000001e4c       0x3c ./source/random.o
+                0x0000000000001e4c                get_rand_uint32
  .text.get_rand_uint8
-                0x0000000000001e98       0x3c ./source/random.o
-                0x0000000000001e98                get_rand_uint8
+                0x0000000000001e88       0x3c ./source/random.o
+                0x0000000000001e88                get_rand_uint8
  .text.stringTimeStamp
-                0x0000000000001ed4       0x98 ./source/rtc.o
-                0x0000000000001ed4                stringTimeStamp
+                0x0000000000001ec4       0x98 ./source/rtc.o
+                0x0000000000001ec4                stringTimeStamp
  .text.updateTime
-                0x0000000000001f6c       0x40 ./source/rtc.o
-                0x0000000000001f6c                updateTime
+                0x0000000000001f5c       0x40 ./source/rtc.o
+                0x0000000000001f5c                updateTime
  .text.getMinutes
-                0x0000000000001fac       0x18 ./source/rtc.o
-                0x0000000000001fac                getMinutes
+                0x0000000000001f9c       0x18 ./source/rtc.o
+                0x0000000000001f9c                getMinutes
  .text.getHours
-                0x0000000000001fc4       0x18 ./source/rtc.o
-                0x0000000000001fc4                getHours
+                0x0000000000001fb4       0x18 ./source/rtc.o
+                0x0000000000001fb4                getHours
  .text.readRegister
-                0x0000000000001fdc       0x44 ./source/rtc.o
-                0x0000000000001fdc                readRegister
+                0x0000000000001fcc       0x44 ./source/rtc.o
+                0x0000000000001fcc                readRegister
  .text.readMultipleRegisters
-                0x0000000000002020       0x50 ./source/rtc.o
-                0x0000000000002020                readMultipleRegisters
+                0x0000000000002010       0x50 ./source/rtc.o
+                0x0000000000002010                readMultipleRegisters
  .text.FTM3_IRQHandler
-                0x0000000000002070       0x70 ./source/scheduler.o
-                0x0000000000002070                FTM3_IRQHandler
+                0x0000000000002060       0x70 ./source/scheduler.o
+                0x0000000000002060                FTM3_IRQHandler
  .text.ADC16_GetInstance
-                0x00000000000020e0       0x4c ./drivers/fsl_adc16.o
+                0x00000000000020d0       0x4c ./drivers/fsl_adc16.o
  .text.ADC16_Init
-                0x000000000000212c      0x10c ./drivers/fsl_adc16.o
-                0x000000000000212c                ADC16_Init
+                0x000000000000211c      0x10c ./drivers/fsl_adc16.o
+                0x000000000000211c                ADC16_Init
  .text.ADC16_GetDefaultConfig
-                0x0000000000002238       0x60 ./drivers/fsl_adc16.o
-                0x0000000000002238                ADC16_GetDefaultConfig
+                0x0000000000002228       0x60 ./drivers/fsl_adc16.o
+                0x0000000000002228                ADC16_GetDefaultConfig
  .text.ADC16_SetChannelConfig
-                0x0000000000002298       0x68 ./drivers/fsl_adc16.o
-                0x0000000000002298                ADC16_SetChannelConfig
+                0x0000000000002288       0x68 ./drivers/fsl_adc16.o
+                0x0000000000002288                ADC16_SetChannelConfig
  .text.ADC16_GetChannelStatusFlags
-                0x0000000000002300       0x40 ./drivers/fsl_adc16.o
-                0x0000000000002300                ADC16_GetChannelStatusFlags
+                0x00000000000022f0       0x40 ./drivers/fsl_adc16.o
+                0x00000000000022f0                ADC16_GetChannelStatusFlags
  .text.CLOCK_SetEr32kClock
-                0x0000000000002340       0x30 ./drivers/fsl_clock.o
+                0x0000000000002330       0x30 ./drivers/fsl_clock.o
  .text.CLOCK_SetPllFllSelClock
-                0x0000000000002370       0x58 ./drivers/fsl_clock.o
+                0x0000000000002360       0x58 ./drivers/fsl_clock.o
  .text.CLOCK_GetMcgExtClkFreq
-                0x00000000000023c8       0x78 ./drivers/fsl_clock.o
+                0x00000000000023b8       0x78 ./drivers/fsl_clock.o
  .text.CLOCK_GetFllExtRefClkFreq
-                0x0000000000002440       0xd0 ./drivers/fsl_clock.o
+                0x0000000000002430       0xd0 ./drivers/fsl_clock.o
  .text.CLOCK_GetInternalRefClkSelectFreq
-                0x0000000000002510       0x44 ./drivers/fsl_clock.o
+                0x0000000000002500       0x44 ./drivers/fsl_clock.o
  .text.CLOCK_GetFllRefClkFreq
-                0x0000000000002554       0x2c ./drivers/fsl_clock.o
+                0x0000000000002544       0x2c ./drivers/fsl_clock.o
  .text.CLOCK_GetOscRangeFromFreq
-                0x0000000000002580       0x3c ./drivers/fsl_clock.o
+                0x0000000000002570       0x3c ./drivers/fsl_clock.o
  .text.CLOCK_GetOsc0ErClkUndivFreq
-                0x00000000000025bc       0x38 ./drivers/fsl_clock.o
-                0x00000000000025bc                CLOCK_GetOsc0ErClkUndivFreq
+                0x00000000000025ac       0x38 ./drivers/fsl_clock.o
+                0x00000000000025ac                CLOCK_GetOsc0ErClkUndivFreq
  .text.CLOCK_GetOsc0ErClkDivFreq
-                0x00000000000025f4       0x48 ./drivers/fsl_clock.o
-                0x00000000000025f4                CLOCK_GetOsc0ErClkDivFreq
+                0x00000000000025e4       0x48 ./drivers/fsl_clock.o
+                0x00000000000025e4                CLOCK_GetOsc0ErClkDivFreq
  .text.CLOCK_GetEr32kClkFreq
-                0x000000000000263c       0x70 ./drivers/fsl_clock.o
-                0x000000000000263c                CLOCK_GetEr32kClkFreq
+                0x000000000000262c       0x70 ./drivers/fsl_clock.o
+                0x000000000000262c                CLOCK_GetEr32kClkFreq
  .text.CLOCK_GetPllFllSelClkFreq
-                0x00000000000026ac       0x90 ./drivers/fsl_clock.o
-                0x00000000000026ac                CLOCK_GetPllFllSelClkFreq
+                0x000000000000269c       0x90 ./drivers/fsl_clock.o
+                0x000000000000269c                CLOCK_GetPllFllSelClkFreq
  .text.CLOCK_GetCoreSysClkFreq
-                0x000000000000273c       0x28 ./drivers/fsl_clock.o
-                0x000000000000273c                CLOCK_GetCoreSysClkFreq
+                0x000000000000272c       0x28 ./drivers/fsl_clock.o
+                0x000000000000272c                CLOCK_GetCoreSysClkFreq
  .text.CLOCK_GetFreq
-                0x0000000000002764      0x150 ./drivers/fsl_clock.o
-                0x0000000000002764                CLOCK_GetFreq
+                0x0000000000002754      0x150 ./drivers/fsl_clock.o
+                0x0000000000002754                CLOCK_GetFreq
  .text.CLOCK_SetSimConfig
-                0x00000000000028b4       0x44 ./drivers/fsl_clock.o
-                0x00000000000028b4                CLOCK_SetSimConfig
+                0x00000000000028a4       0x44 ./drivers/fsl_clock.o
+                0x00000000000028a4                CLOCK_SetSimConfig
  .text.CLOCK_GetOutClkFreq
-                0x00000000000028f8       0x90 ./drivers/fsl_clock.o
-                0x00000000000028f8                CLOCK_GetOutClkFreq
+                0x00000000000028e8       0x90 ./drivers/fsl_clock.o
+                0x00000000000028e8                CLOCK_GetOutClkFreq
  .text.CLOCK_GetFllFreq
-                0x0000000000002988       0x7c ./drivers/fsl_clock.o
-                0x0000000000002988                CLOCK_GetFllFreq
+                0x0000000000002978       0x7c ./drivers/fsl_clock.o
+                0x0000000000002978                CLOCK_GetFllFreq
  .text.CLOCK_GetInternalRefClkFreq
-                0x0000000000002a04       0x24 ./drivers/fsl_clock.o
-                0x0000000000002a04                CLOCK_GetInternalRefClkFreq
+                0x00000000000029f4       0x24 ./drivers/fsl_clock.o
+                0x00000000000029f4                CLOCK_GetInternalRefClkFreq
  .text.CLOCK_GetPll0Freq
-                0x0000000000002a28       0x6c ./drivers/fsl_clock.o
-                0x0000000000002a28                CLOCK_GetPll0Freq
+                0x0000000000002a18       0x6c ./drivers/fsl_clock.o
+                0x0000000000002a18                CLOCK_GetPll0Freq
  .text.CLOCK_GetExtPllFreq
-                0x0000000000002a94       0x18 ./drivers/fsl_clock.o
-                0x0000000000002a94                CLOCK_GetExtPllFreq
+                0x0000000000002a84       0x18 ./drivers/fsl_clock.o
+                0x0000000000002a84                CLOCK_GetExtPllFreq
  .text.CLOCK_SetExternalRefClkConfig
-                0x0000000000002aac       0x6c ./drivers/fsl_clock.o
-                0x0000000000002aac                CLOCK_SetExternalRefClkConfig
+                0x0000000000002a9c       0x6c ./drivers/fsl_clock.o
+                0x0000000000002a9c                CLOCK_SetExternalRefClkConfig
  .text.CLOCK_SetInternalRefClkConfig
-                0x0000000000002b18      0x104 ./drivers/fsl_clock.o
-                0x0000000000002b18                CLOCK_SetInternalRefClkConfig
+                0x0000000000002b08      0x104 ./drivers/fsl_clock.o
+                0x0000000000002b08                CLOCK_SetInternalRefClkConfig
  .text.CLOCK_EnablePll0
-                0x0000000000002c1c       0x84 ./drivers/fsl_clock.o
-                0x0000000000002c1c                CLOCK_EnablePll0
+                0x0000000000002c0c       0x84 ./drivers/fsl_clock.o
+                0x0000000000002c0c                CLOCK_EnablePll0
  .text.CLOCK_InitOsc0
-                0x0000000000002ca0       0x8c ./drivers/fsl_clock.o
-                0x0000000000002ca0                CLOCK_InitOsc0
+                0x0000000000002c90       0x8c ./drivers/fsl_clock.o
+                0x0000000000002c90                CLOCK_InitOsc0
  .text.CLOCK_SetPbeMode
-                0x0000000000002d2c       0xe8 ./drivers/fsl_clock.o
-                0x0000000000002d2c                CLOCK_SetPbeMode
+                0x0000000000002d1c       0xe8 ./drivers/fsl_clock.o
+                0x0000000000002d1c                CLOCK_SetPbeMode
  .text.CLOCK_BootToPeeMode
-                0x0000000000002e14       0x68 ./drivers/fsl_clock.o
-                0x0000000000002e14                CLOCK_BootToPeeMode
+                0x0000000000002e04       0x68 ./drivers/fsl_clock.o
+                0x0000000000002e04                CLOCK_BootToPeeMode
  .text.DMAMUX_GetInstance
-                0x0000000000002e7c       0x44 ./drivers/fsl_dmamux.o
+                0x0000000000002e6c       0x44 ./drivers/fsl_dmamux.o
  .text.DMAMUX_Init
-                0x0000000000002ec0       0x24 ./drivers/fsl_dmamux.o
-                0x0000000000002ec0                DMAMUX_Init
+                0x0000000000002eb0       0x24 ./drivers/fsl_dmamux.o
+                0x0000000000002eb0                DMAMUX_Init
  .text.DSPI_GetInstance
-                0x0000000000002ee4       0x4c ./drivers/fsl_dspi.o
-                0x0000000000002ee4                DSPI_GetInstance
+                0x0000000000002ed4       0x4c ./drivers/fsl_dspi.o
+                0x0000000000002ed4                DSPI_GetInstance
  .text.DSPI_SetDummyData
-                0x0000000000002f30       0x2c ./drivers/fsl_dspi.o
-                0x0000000000002f30                DSPI_SetDummyData
+                0x0000000000002f20       0x2c ./drivers/fsl_dspi.o
+                0x0000000000002f20                DSPI_SetDummyData
  .text.DSPI_MasterInit
-                0x0000000000002f5c      0x16c ./drivers/fsl_dspi.o
-                0x0000000000002f5c                DSPI_MasterInit
+                0x0000000000002f4c      0x16c ./drivers/fsl_dspi.o
+                0x0000000000002f4c                DSPI_MasterInit
  .text.DSPI_MasterSetBaudRate
-                0x00000000000030c8      0x120 ./drivers/fsl_dspi.o
-                0x00000000000030c8                DSPI_MasterSetBaudRate
+                0x00000000000030b8      0x120 ./drivers/fsl_dspi.o
+                0x00000000000030b8                DSPI_MasterSetBaudRate
  .text.DSPI_MasterSetDelayTimes
-                0x00000000000031e8      0x128 ./drivers/fsl_dspi.o
-                0x00000000000031e8                DSPI_MasterSetDelayTimes
+                0x00000000000031d8      0x128 ./drivers/fsl_dspi.o
+                0x00000000000031d8                DSPI_MasterSetDelayTimes
  .text.DSPI_CommonIRQHandler
-                0x0000000000003310       0x40 ./drivers/fsl_dspi.o
+                0x0000000000003300       0x40 ./drivers/fsl_dspi.o
  .text.SPI0_DriverIRQHandler
-                0x0000000000003350       0x30 ./drivers/fsl_dspi.o
-                0x0000000000003350                SPI0_DriverIRQHandler
+                0x0000000000003340       0x30 ./drivers/fsl_dspi.o
+                0x0000000000003340                SPI0_DriverIRQHandler
  .text.SPI1_DriverIRQHandler
-                0x0000000000003380       0x30 ./drivers/fsl_dspi.o
-                0x0000000000003380                SPI1_DriverIRQHandler
+                0x0000000000003370       0x30 ./drivers/fsl_dspi.o
+                0x0000000000003370                SPI1_DriverIRQHandler
  .text.SPI2_DriverIRQHandler
-                0x00000000000033b0       0x30 ./drivers/fsl_dspi.o
-                0x00000000000033b0                SPI2_DriverIRQHandler
+                0x00000000000033a0       0x30 ./drivers/fsl_dspi.o
+                0x00000000000033a0                SPI2_DriverIRQHandler
  .text.EDMA_SetChannelPreemptionConfig
-                0x00000000000033e0       0x74 ./drivers/fsl_dspi_edma.o
+                0x00000000000033d0       0x74 ./drivers/fsl_dspi_edma.o
  .text.EDMA_EnableAutoStopRequest
-                0x0000000000003454       0x64 ./drivers/fsl_dspi_edma.o
+                0x0000000000003444       0x64 ./drivers/fsl_dspi_edma.o
  .text.DSPI_MasterTransferCreateHandleEDMA
-                0x00000000000034b8       0xa0 ./drivers/fsl_dspi_edma.o
-                0x00000000000034b8                DSPI_MasterTransferCreateHandleEDMA
+                0x00000000000034a8       0xa0 ./drivers/fsl_dspi_edma.o
+                0x00000000000034a8                DSPI_MasterTransferCreateHandleEDMA
  .text.DSPI_MasterTransferEDMA
-                0x0000000000003558      0x82c ./drivers/fsl_dspi_edma.o
-                0x0000000000003558                DSPI_MasterTransferEDMA
+                0x0000000000003548      0x82c ./drivers/fsl_dspi_edma.o
+                0x0000000000003548                DSPI_MasterTransferEDMA
  .text.EDMA_DspiMasterCallback
-                0x0000000000003d84       0x78 ./drivers/fsl_dspi_edma.o
+                0x0000000000003d74       0x78 ./drivers/fsl_dspi_edma.o
  .text.__NVIC_EnableIRQ
-                0x0000000000003dfc       0x3c ./drivers/fsl_edma.o
+                0x0000000000003dec       0x3c ./drivers/fsl_edma.o
  .text.EDMA_GetInstance
-                0x0000000000003e38       0x44 ./drivers/fsl_edma.o
+                0x0000000000003e28       0x44 ./drivers/fsl_edma.o
  .text.EDMA_Init
-                0x0000000000003e7c       0x98 ./drivers/fsl_edma.o
-                0x0000000000003e7c                EDMA_Init
+                0x0000000000003e6c       0x98 ./drivers/fsl_edma.o
+                0x0000000000003e6c                EDMA_Init
  .text.EDMA_GetDefaultConfig
-                0x0000000000003f14       0x44 ./drivers/fsl_edma.o
-                0x0000000000003f14                EDMA_GetDefaultConfig
+                0x0000000000003f04       0x44 ./drivers/fsl_edma.o
+                0x0000000000003f04                EDMA_GetDefaultConfig
  .text.EDMA_ResetChannel
-                0x0000000000003f58       0x34 ./drivers/fsl_edma.o
-                0x0000000000003f58                EDMA_ResetChannel
+                0x0000000000003f48       0x34 ./drivers/fsl_edma.o
+                0x0000000000003f48                EDMA_ResetChannel
  .text.EDMA_SetTransferConfig
-                0x0000000000003f8c       0x60 ./drivers/fsl_edma.o
-                0x0000000000003f8c                EDMA_SetTransferConfig
+                0x0000000000003f7c       0x60 ./drivers/fsl_edma.o
+                0x0000000000003f7c                EDMA_SetTransferConfig
  .text.EDMA_SetChannelLink
-                0x0000000000003fec       0x4c ./drivers/fsl_edma.o
-                0x0000000000003fec                EDMA_SetChannelLink
+                0x0000000000003fdc       0x4c ./drivers/fsl_edma.o
+                0x0000000000003fdc                EDMA_SetChannelLink
  .text.EDMA_EnableChannelInterrupts
-                0x0000000000004038       0xa8 ./drivers/fsl_edma.o
-                0x0000000000004038                EDMA_EnableChannelInterrupts
+                0x0000000000004028       0xa8 ./drivers/fsl_edma.o
+                0x0000000000004028                EDMA_EnableChannelInterrupts
  .text.EDMA_TcdReset
-                0x00000000000040e0       0x78 ./drivers/fsl_edma.o
-                0x00000000000040e0                EDMA_TcdReset
+                0x00000000000040d0       0x78 ./drivers/fsl_edma.o
+                0x00000000000040d0                EDMA_TcdReset
  .text.EDMA_TcdSetTransferConfig
-                0x0000000000004158       0xe8 ./drivers/fsl_edma.o
-                0x0000000000004158                EDMA_TcdSetTransferConfig
+                0x0000000000004148       0xe8 ./drivers/fsl_edma.o
+                0x0000000000004148                EDMA_TcdSetTransferConfig
  .text.EDMA_TcdSetChannelLink
-                0x0000000000004240      0x134 ./drivers/fsl_edma.o
-                0x0000000000004240                EDMA_TcdSetChannelLink
+                0x0000000000004230      0x134 ./drivers/fsl_edma.o
+                0x0000000000004230                EDMA_TcdSetChannelLink
  .text.EDMA_GetChannelStatusFlags
-                0x0000000000004374       0x74 ./drivers/fsl_edma.o
-                0x0000000000004374                EDMA_GetChannelStatusFlags
+                0x0000000000004364       0x74 ./drivers/fsl_edma.o
+                0x0000000000004364                EDMA_GetChannelStatusFlags
  .text.Get_StartInstance
-                0x00000000000043e8       0x24 ./drivers/fsl_edma.o
+                0x00000000000043d8       0x24 ./drivers/fsl_edma.o
  .text.EDMA_CreateHandle
-                0x000000000000440c       0xe4 ./drivers/fsl_edma.o
-                0x000000000000440c                EDMA_CreateHandle
+                0x00000000000043fc       0xe4 ./drivers/fsl_edma.o
+                0x00000000000043fc                EDMA_CreateHandle
  .text.EDMA_SetCallback
-                0x00000000000044f0       0x30 ./drivers/fsl_edma.o
-                0x00000000000044f0                EDMA_SetCallback
+                0x00000000000044e0       0x30 ./drivers/fsl_edma.o
+                0x00000000000044e0                EDMA_SetCallback
  .text.EDMA_StartTransfer
-                0x0000000000004520       0xac ./drivers/fsl_edma.o
-                0x0000000000004520                EDMA_StartTransfer
+                0x0000000000004510       0xac ./drivers/fsl_edma.o
+                0x0000000000004510                EDMA_StartTransfer
  .text.EDMA_HandleIRQ
-                0x00000000000045cc      0x154 ./drivers/fsl_edma.o
-                0x00000000000045cc                EDMA_HandleIRQ
+                0x00000000000045bc      0x154 ./drivers/fsl_edma.o
+                0x00000000000045bc                EDMA_HandleIRQ
  .text.DMA0_DMA16_DriverIRQHandler
-                0x0000000000004720       0x4c ./drivers/fsl_edma.o
-                0x0000000000004720                DMA0_DMA16_DriverIRQHandler
+                0x0000000000004710       0x4c ./drivers/fsl_edma.o
+                0x0000000000004710                DMA0_DMA16_DriverIRQHandler
  .text.DMA1_DMA17_DriverIRQHandler
-                0x000000000000476c       0x4c ./drivers/fsl_edma.o
-                0x000000000000476c                DMA1_DMA17_DriverIRQHandler
+                0x000000000000475c       0x4c ./drivers/fsl_edma.o
+                0x000000000000475c                DMA1_DMA17_DriverIRQHandler
  .text.DMA2_DMA18_DriverIRQHandler
-                0x00000000000047b8       0x4c ./drivers/fsl_edma.o
-                0x00000000000047b8                DMA2_DMA18_DriverIRQHandler
+                0x00000000000047a8       0x4c ./drivers/fsl_edma.o
+                0x00000000000047a8                DMA2_DMA18_DriverIRQHandler
  .text.DMA3_DMA19_DriverIRQHandler
-                0x0000000000004804       0x4c ./drivers/fsl_edma.o
-                0x0000000000004804                DMA3_DMA19_DriverIRQHandler
+                0x00000000000047f4       0x4c ./drivers/fsl_edma.o
+                0x00000000000047f4                DMA3_DMA19_DriverIRQHandler
  .text.DMA4_DMA20_DriverIRQHandler
-                0x0000000000004850       0x4c ./drivers/fsl_edma.o
-                0x0000000000004850                DMA4_DMA20_DriverIRQHandler
+                0x0000000000004840       0x4c ./drivers/fsl_edma.o
+                0x0000000000004840                DMA4_DMA20_DriverIRQHandler
  .text.DMA5_DMA21_DriverIRQHandler
-                0x000000000000489c       0x4c ./drivers/fsl_edma.o
-                0x000000000000489c                DMA5_DMA21_DriverIRQHandler
+                0x000000000000488c       0x4c ./drivers/fsl_edma.o
+                0x000000000000488c                DMA5_DMA21_DriverIRQHandler
  .text.DMA6_DMA22_DriverIRQHandler
-                0x00000000000048e8       0x4c ./drivers/fsl_edma.o
-                0x00000000000048e8                DMA6_DMA22_DriverIRQHandler
+                0x00000000000048d8       0x4c ./drivers/fsl_edma.o
+                0x00000000000048d8                DMA6_DMA22_DriverIRQHandler
  .text.DMA7_DMA23_DriverIRQHandler
-                0x0000000000004934       0x4c ./drivers/fsl_edma.o
-                0x0000000000004934                DMA7_DMA23_DriverIRQHandler
+                0x0000000000004924       0x4c ./drivers/fsl_edma.o
+                0x0000000000004924                DMA7_DMA23_DriverIRQHandler
  .text.DMA8_DMA24_DriverIRQHandler
-                0x0000000000004980       0x4c ./drivers/fsl_edma.o
-                0x0000000000004980                DMA8_DMA24_DriverIRQHandler
+                0x0000000000004970       0x4c ./drivers/fsl_edma.o
+                0x0000000000004970                DMA8_DMA24_DriverIRQHandler
  .text.DMA9_DMA25_DriverIRQHandler
-                0x00000000000049cc       0x4c ./drivers/fsl_edma.o
-                0x00000000000049cc                DMA9_DMA25_DriverIRQHandler
+                0x00000000000049bc       0x4c ./drivers/fsl_edma.o
+                0x00000000000049bc                DMA9_DMA25_DriverIRQHandler
  .text.DMA10_DMA26_DriverIRQHandler
-                0x0000000000004a18       0x4c ./drivers/fsl_edma.o
-                0x0000000000004a18                DMA10_DMA26_DriverIRQHandler
+                0x0000000000004a08       0x4c ./drivers/fsl_edma.o
+                0x0000000000004a08                DMA10_DMA26_DriverIRQHandler
  .text.DMA11_DMA27_DriverIRQHandler
-                0x0000000000004a64       0x4c ./drivers/fsl_edma.o
-                0x0000000000004a64                DMA11_DMA27_DriverIRQHandler
+                0x0000000000004a54       0x4c ./drivers/fsl_edma.o
+                0x0000000000004a54                DMA11_DMA27_DriverIRQHandler
  .text.DMA12_DMA28_DriverIRQHandler
-                0x0000000000004ab0       0x4c ./drivers/fsl_edma.o
-                0x0000000000004ab0                DMA12_DMA28_DriverIRQHandler
+                0x0000000000004aa0       0x4c ./drivers/fsl_edma.o
+                0x0000000000004aa0                DMA12_DMA28_DriverIRQHandler
  .text.DMA13_DMA29_DriverIRQHandler
-                0x0000000000004afc       0x4c ./drivers/fsl_edma.o
-                0x0000000000004afc                DMA13_DMA29_DriverIRQHandler
+                0x0000000000004aec       0x4c ./drivers/fsl_edma.o
+                0x0000000000004aec                DMA13_DMA29_DriverIRQHandler
  .text.DMA14_DMA30_DriverIRQHandler
-                0x0000000000004b48       0x4c ./drivers/fsl_edma.o
-                0x0000000000004b48                DMA14_DMA30_DriverIRQHandler
+                0x0000000000004b38       0x4c ./drivers/fsl_edma.o
+                0x0000000000004b38                DMA14_DMA30_DriverIRQHandler
  .text.DMA15_DMA31_DriverIRQHandler
-                0x0000000000004b94       0x4c ./drivers/fsl_edma.o
-                0x0000000000004b94                DMA15_DMA31_DriverIRQHandler
+                0x0000000000004b84       0x4c ./drivers/fsl_edma.o
+                0x0000000000004b84                DMA15_DMA31_DriverIRQHandler
  .text.GPIO_PinInit
-                0x0000000000004be0       0x64 ./drivers/fsl_gpio.o
-                0x0000000000004be0                GPIO_PinInit
+                0x0000000000004bd0       0x64 ./drivers/fsl_gpio.o
+                0x0000000000004bd0                GPIO_PinInit
  .text.I2C_TransferCommonIRQHandler
-                0x0000000000004c44       0x50 ./drivers/fsl_i2c.o
+                0x0000000000004c34       0x50 ./drivers/fsl_i2c.o
  .text.I2C_MasterTransferBlocking
-                0x0000000000004c94      0x22c ./drivers/fsl_i2c.o
-                0x0000000000004c94                I2C_MasterTransferBlocking
+                0x0000000000004c84      0x22c ./drivers/fsl_i2c.o
+                0x0000000000004c84                I2C_MasterTransferBlocking
  .text.I2C0_DriverIRQHandler
-                0x0000000000004ec0       0x1c ./drivers/fsl_i2c.o
-                0x0000000000004ec0                I2C0_DriverIRQHandler
+                0x0000000000004eb0       0x1c ./drivers/fsl_i2c.o
+                0x0000000000004eb0                I2C0_DriverIRQHandler
  .text.I2C1_DriverIRQHandler
-                0x0000000000004edc       0x1c ./drivers/fsl_i2c.o
-                0x0000000000004edc                I2C1_DriverIRQHandler
+                0x0000000000004ecc       0x1c ./drivers/fsl_i2c.o
+                0x0000000000004ecc                I2C1_DriverIRQHandler
  .text.I2C2_DriverIRQHandler
-                0x0000000000004ef8       0x1c ./drivers/fsl_i2c.o
-                0x0000000000004ef8                I2C2_DriverIRQHandler
+                0x0000000000004ee8       0x1c ./drivers/fsl_i2c.o
+                0x0000000000004ee8                I2C2_DriverIRQHandler
  .text.I2C3_DriverIRQHandler
-                0x0000000000004f14       0x1c ./drivers/fsl_i2c.o
-                0x0000000000004f14                I2C3_DriverIRQHandler
+                0x0000000000004f04       0x1c ./drivers/fsl_i2c.o
+                0x0000000000004f04                I2C3_DriverIRQHandler
  .text.LPUART0_DriverIRQHandler
-                0x0000000000004f30       0x28 ./drivers/fsl_lpuart.o
-                0x0000000000004f30                LPUART0_DriverIRQHandler
+                0x0000000000004f20       0x28 ./drivers/fsl_lpuart.o
+                0x0000000000004f20                LPUART0_DriverIRQHandler
  .text.RNGA_Init
-                0x0000000000004f58       0x38 ./drivers/fsl_rnga.o
-                0x0000000000004f58                RNGA_Init
+                0x0000000000004f48       0x38 ./drivers/fsl_rnga.o
+                0x0000000000004f48                RNGA_Init
  .text.TPM_GetInstance
-                0x0000000000004f90       0x54 ./drivers/fsl_tpm.o
+                0x0000000000004f80       0x54 ./drivers/fsl_tpm.o
  .text.TPM_Init
-                0x0000000000004fe4       0xd4 ./drivers/fsl_tpm.o
-                0x0000000000004fe4                TPM_Init
+                0x0000000000004fd4       0xd4 ./drivers/fsl_tpm.o
+                0x0000000000004fd4                TPM_Init
  .text.TPM_GetDefaultConfig
-                0x00000000000050b8       0x68 ./drivers/fsl_tpm.o
-                0x00000000000050b8                TPM_GetDefaultConfig
+                0x00000000000050a8       0x68 ./drivers/fsl_tpm.o
+                0x00000000000050a8                TPM_GetDefaultConfig
  .text.UART_GetInstance
-                0x0000000000005120       0x54 ./drivers/fsl_uart.o
-                0x0000000000005120                UART_GetInstance
+                0x0000000000005110       0x54 ./drivers/fsl_uart.o
+                0x0000000000005110                UART_GetInstance
  .text.UART_Init
-                0x0000000000005174      0x2d8 ./drivers/fsl_uart.o
-                0x0000000000005174                UART_Init
+                0x0000000000005164      0x2d8 ./drivers/fsl_uart.o
+                0x0000000000005164                UART_Init
  .text.UART_GetDefaultConfig
-                0x000000000000544c       0x68 ./drivers/fsl_uart.o
-                0x000000000000544c                UART_GetDefaultConfig
+                0x000000000000543c       0x68 ./drivers/fsl_uart.o
+                0x000000000000543c                UART_GetDefaultConfig
  .text.UART_EnableInterrupts
-                0x00000000000054b4       0x70 ./drivers/fsl_uart.o
-                0x00000000000054b4                UART_EnableInterrupts
+                0x00000000000054a4       0x70 ./drivers/fsl_uart.o
+                0x00000000000054a4                UART_EnableInterrupts
  .text.UART0_DriverIRQHandler
-                0x0000000000005524       0x28 ./drivers/fsl_uart.o
-                0x0000000000005524                UART0_DriverIRQHandler
+                0x0000000000005514       0x28 ./drivers/fsl_uart.o
+                0x0000000000005514                UART0_DriverIRQHandler
  .text.UART2_DriverIRQHandler
-                0x000000000000554c       0x28 ./drivers/fsl_uart.o
-                0x000000000000554c                UART2_DriverIRQHandler
+                0x000000000000553c       0x28 ./drivers/fsl_uart.o
+                0x000000000000553c                UART2_DriverIRQHandler
  .text.UART3_DriverIRQHandler
-                0x0000000000005574       0x28 ./drivers/fsl_uart.o
-                0x0000000000005574                UART3_DriverIRQHandler
+                0x0000000000005564       0x28 ./drivers/fsl_uart.o
+                0x0000000000005564                UART3_DriverIRQHandler
  .text.UART4_DriverIRQHandler
-                0x000000000000559c       0x28 ./drivers/fsl_uart.o
-                0x000000000000559c                UART4_DriverIRQHandler
+                0x000000000000558c       0x28 ./drivers/fsl_uart.o
+                0x000000000000558c                UART4_DriverIRQHandler
  .text.SystemInit
-                0x00000000000055c4       0x3c ./device/system_MK66F18.o
-                0x00000000000055c4                SystemInit
+                0x00000000000055b4       0x3c ./device/system_MK66F18.o
+                0x00000000000055b4                SystemInit
  .text.HAL_UartInit
-                0x0000000000005600      0x108 ./component/uart/uart_adapter.o
-                0x0000000000005600                HAL_UartInit
+                0x00000000000055f0      0x108 ./component/uart/uart_adapter.o
+                0x00000000000055f0                HAL_UartInit
  .text.SerialManager_Init
-                0x0000000000005708       0x74 ./component/serial_manager/serial_manager.o
-                0x0000000000005708                SerialManager_Init
+                0x00000000000056f8       0x74 ./component/serial_manager/serial_manager.o
+                0x00000000000056f8                SerialManager_Init
  .text.SerialManager_OpenWriteHandle
-                0x000000000000577c       0x58 ./component/serial_manager/serial_manager.o
-                0x000000000000577c                SerialManager_OpenWriteHandle
+                0x000000000000576c       0x58 ./component/serial_manager/serial_manager.o
+                0x000000000000576c                SerialManager_OpenWriteHandle
  .text.SerialManager_OpenReadHandle
-                0x00000000000057d4       0x60 ./component/serial_manager/serial_manager.o
-                0x00000000000057d4                SerialManager_OpenReadHandle
+                0x00000000000057c4       0x60 ./component/serial_manager/serial_manager.o
+                0x00000000000057c4                SerialManager_OpenReadHandle
  .text.Serial_UartInit
-                0x0000000000005834       0x80 ./component/serial_manager/serial_port_uart.o
-                0x0000000000005834                Serial_UartInit
+                0x0000000000005824       0x80 ./component/serial_manager/serial_port_uart.o
+                0x0000000000005824                Serial_UartInit
  .text.CLOCK_SetSimSafeDivs
-                0x00000000000058b4       0x24 ./board/clock_config.o
+                0x00000000000058a4       0x24 ./board/clock_config.o
  .text.CLOCK_SetXtal0Freq
-                0x00000000000058d8       0x20 ./board/clock_config.o
+                0x00000000000058c8       0x20 ./board/clock_config.o
  .text.CLOCK_CONFIG_SetFllExtRefDiv
-                0x00000000000058f8       0x3c ./board/clock_config.o
+                0x00000000000058e8       0x3c ./board/clock_config.o
  .text.BOARD_BootClockRUN
-                0x0000000000005934       0x60 ./board/clock_config.o
-                0x0000000000005934                BOARD_BootClockRUN
+                0x0000000000005924       0x60 ./board/clock_config.o
+                0x0000000000005924                BOARD_BootClockRUN
  .text.__assertion_failed
-                0x0000000000005994       0x4c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(_cr_assert.o)
-                0x0000000000005994                __assertion_failed
+                0x0000000000005984       0x4c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(_cr_assert.o)
+                0x0000000000005984                __assertion_failed
  .text.__sys_appexit
-                0x00000000000059e0        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_appexit.o)
-                0x00000000000059e0                __exit
-                0x00000000000059e0                __sys_appexit
+                0x00000000000059d0        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_appexit.o)
+                0x00000000000059d0                __exit
+                0x00000000000059d0                __sys_appexit
  .text._Cwritebuf
-                0x00000000000059ec       0x6c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_writebuf.o)
-                0x00000000000059ec                _Cwritebuf
- .text.malloc   0x0000000000005a58       0xc8 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
-                0x0000000000005a58                malloc
+                0x00000000000059dc       0x6c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_writebuf.o)
+                0x00000000000059dc                _Cwritebuf
+ .text.malloc   0x0000000000005a48       0xc8 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
+                0x0000000000005a48                malloc
  .text._Csys_alloc
-                0x0000000000005b20       0x20 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
-                0x0000000000005b20                _Csys_alloc
- .text.fseek    0x0000000000005b40      0x100 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fseek.o)
-                0x0000000000005b40                fseek
- .text.ftell    0x0000000000005c40       0x48 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(ftell.o)
-                0x0000000000005c40                ftell
- .text._initio  0x0000000000005c88       0x78 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(initio.o)
-                0x0000000000005c88                _initio
+                0x0000000000005b10       0x20 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
+                0x0000000000005b10                _Csys_alloc
+ .text.fseek    0x0000000000005b30      0x100 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fseek.o)
+                0x0000000000005b30                fseek
+ .text.ftell    0x0000000000005c30       0x48 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(ftell.o)
+                0x0000000000005c30                ftell
+ .text._initio  0x0000000000005c78       0x78 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(initio.o)
+                0x0000000000005c78                _initio
  .text.__vfprintf
-                0x0000000000005d00      0xbe0 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
-                0x0000000000005d00                __vfprintf
+                0x0000000000005cf0      0xbe0 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
+                0x0000000000005cf0                __vfprintf
  .text._sprintf
-                0x00000000000068e0       0x6c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
-                0x00000000000068e0                _sprintf
+                0x00000000000068d0       0x6c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
+                0x00000000000068d0                _sprintf
  .text._vsnprintf
-                0x000000000000694c       0x68 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
-                0x000000000000694c                _vsnprintf
- .text._printf  0x00000000000069b4       0x54 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
-                0x00000000000069b4                _printf
- .text.setvbuf  0x0000000000006a08       0x40 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(setvbuf.o)
-                0x0000000000006a08                setvbuf
- .text._sbrk    0x0000000000006a48       0x3c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_cr_sbrk.o)
-                0x0000000000006a48                _sbrk
- .text.fflush   0x0000000000006a84       0x44 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fflush.o)
-                0x0000000000006a84                fflush
+                0x000000000000693c       0x68 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
+                0x000000000000693c                _vsnprintf
+ .text._printf  0x00000000000069a4       0x54 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
+                0x00000000000069a4                _printf
+ .text.setvbuf  0x00000000000069f8       0x40 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(setvbuf.o)
+                0x00000000000069f8                setvbuf
+ .text._sbrk    0x0000000000006a38       0x3c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_cr_sbrk.o)
+                0x0000000000006a38                _sbrk
+ .text.fflush   0x0000000000006a74       0x44 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fflush.o)
+                0x0000000000006a74                fflush
  .text.__check_heap_overflow
-                0x0000000000006ac8       0x18 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_cr_check_heap.o)
-                0x0000000000006ac8                __check_heap_overflow
+                0x0000000000006ab8       0x18 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_cr_check_heap.o)
+                0x0000000000006ab8                __check_heap_overflow
  .text.DMA0_DMA16_IRQHandler
-                0x0000000000006ae0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ae0                DMA0_DMA16_IRQHandler
+                0x0000000000006ad0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ad0                DMA0_DMA16_IRQHandler
  .text.DMA1_DMA17_IRQHandler
-                0x0000000000006ae8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ae8                DMA1_DMA17_IRQHandler
+                0x0000000000006ad8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ad8                DMA1_DMA17_IRQHandler
  .text.DMA2_DMA18_IRQHandler
-                0x0000000000006af0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006af0                DMA2_DMA18_IRQHandler
+                0x0000000000006ae0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ae0                DMA2_DMA18_IRQHandler
  .text.DMA3_DMA19_IRQHandler
-                0x0000000000006af8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006af8                DMA3_DMA19_IRQHandler
+                0x0000000000006ae8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ae8                DMA3_DMA19_IRQHandler
  .text.DMA4_DMA20_IRQHandler
-                0x0000000000006b00        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b00                DMA4_DMA20_IRQHandler
+                0x0000000000006af0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006af0                DMA4_DMA20_IRQHandler
  .text.DMA5_DMA21_IRQHandler
-                0x0000000000006b08        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b08                DMA5_DMA21_IRQHandler
+                0x0000000000006af8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006af8                DMA5_DMA21_IRQHandler
  .text.DMA6_DMA22_IRQHandler
-                0x0000000000006b10        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b10                DMA6_DMA22_IRQHandler
+                0x0000000000006b00        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b00                DMA6_DMA22_IRQHandler
  .text.DMA7_DMA23_IRQHandler
-                0x0000000000006b18        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b18                DMA7_DMA23_IRQHandler
+                0x0000000000006b08        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b08                DMA7_DMA23_IRQHandler
  .text.DMA8_DMA24_IRQHandler
-                0x0000000000006b20        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b20                DMA8_DMA24_IRQHandler
+                0x0000000000006b10        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b10                DMA8_DMA24_IRQHandler
  .text.DMA9_DMA25_IRQHandler
-                0x0000000000006b28        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b28                DMA9_DMA25_IRQHandler
+                0x0000000000006b18        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b18                DMA9_DMA25_IRQHandler
  .text.DMA10_DMA26_IRQHandler
-                0x0000000000006b30        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b30                DMA10_DMA26_IRQHandler
+                0x0000000000006b20        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b20                DMA10_DMA26_IRQHandler
  .text.DMA11_DMA27_IRQHandler
-                0x0000000000006b38        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b38                DMA11_DMA27_IRQHandler
+                0x0000000000006b28        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b28                DMA11_DMA27_IRQHandler
  .text.DMA12_DMA28_IRQHandler
-                0x0000000000006b40        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b40                DMA12_DMA28_IRQHandler
+                0x0000000000006b30        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b30                DMA12_DMA28_IRQHandler
  .text.DMA13_DMA29_IRQHandler
-                0x0000000000006b48        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b48                DMA13_DMA29_IRQHandler
+                0x0000000000006b38        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b38                DMA13_DMA29_IRQHandler
  .text.DMA14_DMA30_IRQHandler
-                0x0000000000006b50        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b50                DMA14_DMA30_IRQHandler
+                0x0000000000006b40        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b40                DMA14_DMA30_IRQHandler
  .text.DMA15_DMA31_IRQHandler
-                0x0000000000006b58        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b58                DMA15_DMA31_IRQHandler
+                0x0000000000006b48        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b48                DMA15_DMA31_IRQHandler
  .text.DMA_Error_IRQHandler
-                0x0000000000006b60        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b60                DMA_Error_IRQHandler
+                0x0000000000006b50        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b50                DMA_Error_IRQHandler
  .text.MCM_IRQHandler
-                0x0000000000006b68        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b68                MCM_IRQHandler
+                0x0000000000006b58        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b58                MCM_IRQHandler
  .text.FTFE_IRQHandler
-                0x0000000000006b70        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b70                FTFE_IRQHandler
+                0x0000000000006b60        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b60                FTFE_IRQHandler
  .text.Read_Collision_IRQHandler
-                0x0000000000006b78        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b78                Read_Collision_IRQHandler
+                0x0000000000006b68        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b68                Read_Collision_IRQHandler
  .text.LVD_LVW_IRQHandler
-                0x0000000000006b80        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b80                LVD_LVW_IRQHandler
+                0x0000000000006b70        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b70                LVD_LVW_IRQHandler
  .text.LLWU_IRQHandler
-                0x0000000000006b88        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b88                LLWU_IRQHandler
+                0x0000000000006b78        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b78                LLWU_IRQHandler
  .text.WDOG_EWM_IRQHandler
-                0x0000000000006b90        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b90                WDOG_EWM_IRQHandler
+                0x0000000000006b80        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b80                WDOG_EWM_IRQHandler
  .text.RNG_IRQHandler
-                0x0000000000006b98        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006b98                RNG_IRQHandler
+                0x0000000000006b88        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b88                RNG_IRQHandler
  .text.I2C0_IRQHandler
-                0x0000000000006ba0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ba0                I2C0_IRQHandler
+                0x0000000000006b90        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b90                I2C0_IRQHandler
  .text.I2C1_IRQHandler
-                0x0000000000006ba8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ba8                I2C1_IRQHandler
+                0x0000000000006b98        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006b98                I2C1_IRQHandler
  .text.SPI0_IRQHandler
-                0x0000000000006bb0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bb0                SPI0_IRQHandler
+                0x0000000000006ba0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ba0                SPI0_IRQHandler
  .text.SPI1_IRQHandler
-                0x0000000000006bb8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bb8                SPI1_IRQHandler
+                0x0000000000006ba8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ba8                SPI1_IRQHandler
  .text.I2S0_Tx_IRQHandler
-                0x0000000000006bc0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bc0                I2S0_Tx_IRQHandler
+                0x0000000000006bb0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bb0                I2S0_Tx_IRQHandler
  .text.I2S0_Rx_IRQHandler
-                0x0000000000006bc8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bc8                I2S0_Rx_IRQHandler
+                0x0000000000006bb8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bb8                I2S0_Rx_IRQHandler
  .text.Reserved46_IRQHandler
-                0x0000000000006bd0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bd0                Reserved46_IRQHandler
+                0x0000000000006bc0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bc0                Reserved46_IRQHandler
  .text.UART0_RX_TX_IRQHandler
-                0x0000000000006bd8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bd8                UART0_RX_TX_IRQHandler
+                0x0000000000006bc8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bc8                UART0_RX_TX_IRQHandler
  .text.UART0_ERR_IRQHandler
-                0x0000000000006be0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006be0                UART0_ERR_IRQHandler
+                0x0000000000006bd0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bd0                UART0_ERR_IRQHandler
  .text.UART1_ERR_IRQHandler
-                0x0000000000006be8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006be8                UART1_ERR_IRQHandler
+                0x0000000000006bd8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bd8                UART1_ERR_IRQHandler
  .text.UART2_RX_TX_IRQHandler
-                0x0000000000006bf0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bf0                UART2_RX_TX_IRQHandler
+                0x0000000000006be0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006be0                UART2_RX_TX_IRQHandler
  .text.UART2_ERR_IRQHandler
-                0x0000000000006bf8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006bf8                UART2_ERR_IRQHandler
+                0x0000000000006be8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006be8                UART2_ERR_IRQHandler
  .text.UART3_RX_TX_IRQHandler
-                0x0000000000006c00        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c00                UART3_RX_TX_IRQHandler
+                0x0000000000006bf0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bf0                UART3_RX_TX_IRQHandler
  .text.UART3_ERR_IRQHandler
-                0x0000000000006c08        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c08                UART3_ERR_IRQHandler
+                0x0000000000006bf8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006bf8                UART3_ERR_IRQHandler
  .text.ADC0_IRQHandler
-                0x0000000000006c10        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c10                ADC0_IRQHandler
+                0x0000000000006c00        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c00                ADC0_IRQHandler
  .text.CMP0_IRQHandler
-                0x0000000000006c18        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c18                CMP0_IRQHandler
+                0x0000000000006c08        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c08                CMP0_IRQHandler
  .text.CMP1_IRQHandler
-                0x0000000000006c20        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c20                CMP1_IRQHandler
+                0x0000000000006c10        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c10                CMP1_IRQHandler
  .text.FTM0_IRQHandler
-                0x0000000000006c28        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c28                FTM0_IRQHandler
+                0x0000000000006c18        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c18                FTM0_IRQHandler
  .text.FTM1_IRQHandler
-                0x0000000000006c30        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c30                FTM1_IRQHandler
+                0x0000000000006c20        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c20                FTM1_IRQHandler
  .text.FTM2_IRQHandler
-                0x0000000000006c38        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c38                FTM2_IRQHandler
+                0x0000000000006c28        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c28                FTM2_IRQHandler
  .text.CMT_IRQHandler
-                0x0000000000006c40        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c40                CMT_IRQHandler
+                0x0000000000006c30        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c30                CMT_IRQHandler
  .text.RTC_IRQHandler
-                0x0000000000006c48        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c48                RTC_IRQHandler
+                0x0000000000006c38        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c38                RTC_IRQHandler
  .text.RTC_Seconds_IRQHandler
-                0x0000000000006c50        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c50                RTC_Seconds_IRQHandler
+                0x0000000000006c40        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c40                RTC_Seconds_IRQHandler
  .text.PIT0_IRQHandler
-                0x0000000000006c58        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c58                PIT0_IRQHandler
+                0x0000000000006c48        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c48                PIT0_IRQHandler
  .text.PIT1_IRQHandler
-                0x0000000000006c60        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c60                PIT1_IRQHandler
+                0x0000000000006c50        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c50                PIT1_IRQHandler
  .text.PIT2_IRQHandler
-                0x0000000000006c68        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c68                PIT2_IRQHandler
+                0x0000000000006c58        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c58                PIT2_IRQHandler
  .text.PIT3_IRQHandler
-                0x0000000000006c70        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c70                PIT3_IRQHandler
+                0x0000000000006c60        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c60                PIT3_IRQHandler
  .text.PDB0_IRQHandler
-                0x0000000000006c78        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c78                PDB0_IRQHandler
+                0x0000000000006c68        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c68                PDB0_IRQHandler
  .text.USB0_IRQHandler
-                0x0000000000006c80        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c80                USB0_IRQHandler
+                0x0000000000006c70        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c70                USB0_IRQHandler
  .text.USBDCD_IRQHandler
-                0x0000000000006c88        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c88                USBDCD_IRQHandler
+                0x0000000000006c78        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c78                USBDCD_IRQHandler
  .text.Reserved71_IRQHandler
-                0x0000000000006c90        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c90                Reserved71_IRQHandler
+                0x0000000000006c80        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c80                Reserved71_IRQHandler
  .text.DAC0_IRQHandler
-                0x0000000000006c98        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006c98                DAC0_IRQHandler
+                0x0000000000006c88        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c88                DAC0_IRQHandler
  .text.MCG_IRQHandler
-                0x0000000000006ca0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ca0                MCG_IRQHandler
+                0x0000000000006c90        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c90                MCG_IRQHandler
  .text.LPTMR0_IRQHandler
-                0x0000000000006ca8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ca8                LPTMR0_IRQHandler
+                0x0000000000006c98        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006c98                LPTMR0_IRQHandler
  .text.PORTA_IRQHandler
-                0x0000000000006cb0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cb0                PORTA_IRQHandler
+                0x0000000000006ca0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ca0                PORTA_IRQHandler
  .text.PORTB_IRQHandler
-                0x0000000000006cb8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cb8                PORTB_IRQHandler
+                0x0000000000006ca8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ca8                PORTB_IRQHandler
  .text.PORTC_IRQHandler
-                0x0000000000006cc0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cc0                PORTC_IRQHandler
+                0x0000000000006cb0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cb0                PORTC_IRQHandler
  .text.PORTD_IRQHandler
-                0x0000000000006cc8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cc8                PORTD_IRQHandler
+                0x0000000000006cb8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cb8                PORTD_IRQHandler
  .text.PORTE_IRQHandler
-                0x0000000000006cd0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cd0                PORTE_IRQHandler
+                0x0000000000006cc0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cc0                PORTE_IRQHandler
  .text.SWI_IRQHandler
-                0x0000000000006cd8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cd8                SWI_IRQHandler
+                0x0000000000006cc8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cc8                SWI_IRQHandler
  .text.SPI2_IRQHandler
-                0x0000000000006ce0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ce0                SPI2_IRQHandler
+                0x0000000000006cd0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cd0                SPI2_IRQHandler
  .text.UART4_RX_TX_IRQHandler
-                0x0000000000006ce8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006ce8                UART4_RX_TX_IRQHandler
+                0x0000000000006cd8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cd8                UART4_RX_TX_IRQHandler
  .text.UART4_ERR_IRQHandler
-                0x0000000000006cf0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cf0                UART4_ERR_IRQHandler
+                0x0000000000006ce0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ce0                UART4_ERR_IRQHandler
  .text.Reserved84_IRQHandler
-                0x0000000000006cf8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006cf8                Reserved84_IRQHandler
+                0x0000000000006ce8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006ce8                Reserved84_IRQHandler
  .text.Reserved85_IRQHandler
-                0x0000000000006d00        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d00                Reserved85_IRQHandler
+                0x0000000000006cf0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cf0                Reserved85_IRQHandler
  .text.CMP2_IRQHandler
-                0x0000000000006d08        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d08                CMP2_IRQHandler
+                0x0000000000006cf8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006cf8                CMP2_IRQHandler
  .text.DAC1_IRQHandler
-                0x0000000000006d10        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d10                DAC1_IRQHandler
+                0x0000000000006d00        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d00                DAC1_IRQHandler
  .text.I2C2_IRQHandler
-                0x0000000000006d18        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d18                I2C2_IRQHandler
+                0x0000000000006d08        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d08                I2C2_IRQHandler
  .text.CAN0_ORed_Message_buffer_IRQHandler
-                0x0000000000006d20        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d20                CAN0_ORed_Message_buffer_IRQHandler
+                0x0000000000006d10        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d10                CAN0_ORed_Message_buffer_IRQHandler
  .text.CAN0_Bus_Off_IRQHandler
-                0x0000000000006d28        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d28                CAN0_Bus_Off_IRQHandler
+                0x0000000000006d18        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d18                CAN0_Bus_Off_IRQHandler
  .text.CAN0_Error_IRQHandler
-                0x0000000000006d30        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d30                CAN0_Error_IRQHandler
+                0x0000000000006d20        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d20                CAN0_Error_IRQHandler
  .text.CAN0_Tx_Warning_IRQHandler
-                0x0000000000006d38        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d38                CAN0_Tx_Warning_IRQHandler
+                0x0000000000006d28        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d28                CAN0_Tx_Warning_IRQHandler
  .text.CAN0_Rx_Warning_IRQHandler
-                0x0000000000006d40        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d40                CAN0_Rx_Warning_IRQHandler
+                0x0000000000006d30        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d30                CAN0_Rx_Warning_IRQHandler
  .text.CAN0_Wake_Up_IRQHandler
-                0x0000000000006d48        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d48                CAN0_Wake_Up_IRQHandler
+                0x0000000000006d38        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d38                CAN0_Wake_Up_IRQHandler
  .text.SDHC_IRQHandler
-                0x0000000000006d50        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d50                SDHC_IRQHandler
+                0x0000000000006d40        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d40                SDHC_IRQHandler
  .text.ENET_1588_Timer_IRQHandler
-                0x0000000000006d58        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d58                ENET_1588_Timer_IRQHandler
+                0x0000000000006d48        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d48                ENET_1588_Timer_IRQHandler
  .text.ENET_Transmit_IRQHandler
-                0x0000000000006d60        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d60                ENET_Transmit_IRQHandler
+                0x0000000000006d50        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d50                ENET_Transmit_IRQHandler
  .text.ENET_Receive_IRQHandler
-                0x0000000000006d68        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d68                ENET_Receive_IRQHandler
+                0x0000000000006d58        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d58                ENET_Receive_IRQHandler
  .text.ENET_Error_IRQHandler
-                0x0000000000006d70        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d70                ENET_Error_IRQHandler
+                0x0000000000006d60        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d60                ENET_Error_IRQHandler
  .text.LPUART0_IRQHandler
-                0x0000000000006d78        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d78                LPUART0_IRQHandler
+                0x0000000000006d68        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d68                LPUART0_IRQHandler
  .text.TSI0_IRQHandler
-                0x0000000000006d80        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d80                TSI0_IRQHandler
+                0x0000000000006d70        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d70                TSI0_IRQHandler
  .text.TPM1_IRQHandler
-                0x0000000000006d88        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d88                TPM1_IRQHandler
+                0x0000000000006d78        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d78                TPM1_IRQHandler
  .text.USBHSDCD_IRQHandler
-                0x0000000000006d90        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d90                USBHSDCD_IRQHandler
+                0x0000000000006d80        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d80                USBHSDCD_IRQHandler
  .text.I2C3_IRQHandler
-                0x0000000000006d98        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006d98                I2C3_IRQHandler
+                0x0000000000006d88        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d88                I2C3_IRQHandler
  .text.CMP3_IRQHandler
-                0x0000000000006da0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006da0                CMP3_IRQHandler
+                0x0000000000006d90        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d90                CMP3_IRQHandler
  .text.USBHS_IRQHandler
-                0x0000000000006da8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006da8                USBHS_IRQHandler
+                0x0000000000006d98        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006d98                USBHS_IRQHandler
  .text.CAN1_ORed_Message_buffer_IRQHandler
-                0x0000000000006db0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006db0                CAN1_ORed_Message_buffer_IRQHandler
+                0x0000000000006da0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006da0                CAN1_ORed_Message_buffer_IRQHandler
  .text.CAN1_Bus_Off_IRQHandler
-                0x0000000000006db8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006db8                CAN1_Bus_Off_IRQHandler
+                0x0000000000006da8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006da8                CAN1_Bus_Off_IRQHandler
  .text.CAN1_Error_IRQHandler
-                0x0000000000006dc0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006dc0                CAN1_Error_IRQHandler
+                0x0000000000006db0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006db0                CAN1_Error_IRQHandler
  .text.CAN1_Tx_Warning_IRQHandler
-                0x0000000000006dc8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006dc8                CAN1_Tx_Warning_IRQHandler
+                0x0000000000006db8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006db8                CAN1_Tx_Warning_IRQHandler
  .text.CAN1_Rx_Warning_IRQHandler
-                0x0000000000006dd0        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006dd0                CAN1_Rx_Warning_IRQHandler
+                0x0000000000006dc0        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006dc0                CAN1_Rx_Warning_IRQHandler
  .text.CAN1_Wake_Up_IRQHandler
-                0x0000000000006dd8        0x8 ./startup/startup_mk66f18.o
-                0x0000000000006dd8                CAN1_Wake_Up_IRQHandler
+                0x0000000000006dc8        0x8 ./startup/startup_mk66f18.o
+                0x0000000000006dc8                CAN1_Wake_Up_IRQHandler
  .text.CLOCK_EnableClock
-                0x0000000000006de0       0x34 ./source/controller.o
+                0x0000000000006dd0       0x34 ./source/controller.o
  .text.EnableIRQ
-                0x0000000000006e14       0x2c ./source/controller.o
+                0x0000000000006e04       0x2c ./source/controller.o
  .text.UART_ReadByte
-                0x0000000000006e40       0x1a ./source/controller.o
+                0x0000000000006e30       0x1a ./source/controller.o
  .text.PORT_SetPinMux
-                0x0000000000006e5a       0x3a ./source/controller.o
- .text.upEvent  0x0000000000006e94        0xe ./source/controller.o
-                0x0000000000006e94                upEvent
+                0x0000000000006e4a       0x3a ./source/controller.o
+ .text.upEvent  0x0000000000006e84        0xe ./source/controller.o
+                0x0000000000006e84                upEvent
  .text.downEvent
-                0x0000000000006ea2        0xe ./source/controller.o
-                0x0000000000006ea2                downEvent
+                0x0000000000006e92        0xe ./source/controller.o
+                0x0000000000006e92                downEvent
  .text.leftEvent
-                0x0000000000006eb0        0xc ./source/controller.o
-                0x0000000000006eb0                leftEvent
+                0x0000000000006ea0        0xc ./source/controller.o
+                0x0000000000006ea0                leftEvent
  .text.rightEvent
-                0x0000000000006ebc        0xc ./source/controller.o
-                0x0000000000006ebc                rightEvent
+                0x0000000000006eac        0xc ./source/controller.o
+                0x0000000000006eac                rightEvent
  .text.startEvent
-                0x0000000000006ec8        0xe ./source/controller.o
-                0x0000000000006ec8                startEvent
+                0x0000000000006eb8        0xe ./source/controller.o
+                0x0000000000006eb8                startEvent
  .text.selectEvent
-                0x0000000000006ed6        0xe ./source/controller.o
-                0x0000000000006ed6                selectEvent
+                0x0000000000006ec6        0xe ./source/controller.o
+                0x0000000000006ec6                selectEvent
  .text.CLOCK_EnableClock
-                0x0000000000006ee4       0x34 ./source/leds.o
+                0x0000000000006ed4       0x34 ./source/leds.o
  .text.PORT_SetPinMux
-                0x0000000000006f18       0x3a ./source/leds.o
- .text.main     0x0000000000006f52       0x3a ./source/main.o
-                0x0000000000006f52                main
+                0x0000000000006f08       0x3a ./source/leds.o
+ .text.main     0x0000000000006f42       0x3a ./source/main.o
+                0x0000000000006f42                main
  .text.CLOCK_EnableClock
-                0x0000000000006f8c       0x34 ./source/msgeq07.o
+                0x0000000000006f7c       0x34 ./source/msgeq07.o
  .text.EnableIRQ
-                0x0000000000006fc0       0x2c ./source/msgeq07.o
+                0x0000000000006fb0       0x2c ./source/msgeq07.o
  .text.PORT_SetPinMux
-                0x0000000000006fec       0x3a ./source/msgeq07.o
+                0x0000000000006fdc       0x3a ./source/msgeq07.o
  .text.ADC16_EnableHardwareTrigger
-                0x0000000000007026       0x38 ./source/msgeq07.o
+                0x0000000000007016       0x38 ./source/msgeq07.o
  .text.TPM_ClearStatusFlags
-                0x000000000000705e       0x1c ./source/msgeq07.o
+                0x000000000000704e       0x1c ./source/msgeq07.o
  .text.TPM_SetTimerPeriod
-                0x000000000000707a       0x1c ./source/msgeq07.o
+                0x000000000000706a       0x1c ./source/msgeq07.o
  .text.TPM_StartTimer
-                0x0000000000007096       0x3a ./source/msgeq07.o
+                0x0000000000007086       0x3a ./source/msgeq07.o
  .text.TPM_StopTimer
-                0x00000000000070d0       0x2e ./source/msgeq07.o
+                0x00000000000070c0       0x2e ./source/msgeq07.o
  .text.GPIO_PortSet
-                0x00000000000070fe       0x1c ./source/msgeq07.o
+                0x00000000000070ee       0x1c ./source/msgeq07.o
  .text.GPIO_PortClear
-                0x000000000000711a       0x1c ./source/msgeq07.o
+                0x000000000000710a       0x1c ./source/msgeq07.o
  .text.initMsgeq07
-                0x0000000000007136       0x14 ./source/msgeq07.o
-                0x0000000000007136                initMsgeq07
+                0x0000000000007126       0x14 ./source/msgeq07.o
+                0x0000000000007126                initMsgeq07
  .text.CLOCK_EnableClock
-                0x000000000000714a       0x34 ./source/power.o
+                0x000000000000713a       0x34 ./source/power.o
  .text.PORT_SetPinMux
-                0x000000000000717e       0x3a ./source/power.o
+                0x000000000000716e       0x3a ./source/power.o
  .text.GPIO_PortSet
-                0x00000000000071b8       0x1c ./source/power.o
+                0x00000000000071a8       0x1c ./source/power.o
  .text.GPIO_PortClear
-                0x00000000000071d4       0x1c ./source/power.o
+                0x00000000000071c4       0x1c ./source/power.o
  .text.get_rand_uint32_range
-                0x00000000000071f0       0x2c ./source/random.o
-                0x00000000000071f0                get_rand_uint32_range
+                0x00000000000071e0       0x2c ./source/random.o
+                0x00000000000071e0                get_rand_uint32_range
  .text.get_rand_uint8_range
-                0x000000000000721c       0x34 ./source/random.o
-                0x000000000000721c                get_rand_uint8_range
+                0x000000000000720c       0x34 ./source/random.o
+                0x000000000000720c                get_rand_uint8_range
  .text.is12Hour
-                0x0000000000007250       0x28 ./source/rtc.o
-                0x0000000000007250                is12Hour
+                0x0000000000007240       0x28 ./source/rtc.o
+                0x0000000000007240                is12Hour
  .text.BCDtoDEC
-                0x0000000000007278       0x32 ./source/rtc.o
-                0x0000000000007278                BCDtoDEC
+                0x0000000000007268       0x32 ./source/rtc.o
+                0x0000000000007268                BCDtoDEC
  .text.autoPower
-                0x00000000000072aa       0x56 ./source/scheduler.o
-                0x00000000000072aa                autoPower
+                0x000000000000729a       0x56 ./source/scheduler.o
+                0x000000000000729a                autoPower
  .text.nextPattern
-                0x0000000000007300        0xe ./source/scheduler.o
-                0x0000000000007300                nextPattern
+                0x00000000000072f0        0xe ./source/scheduler.o
+                0x00000000000072f0                nextPattern
  .text.HardFault_Handler
-                0x000000000000730e       0x2c ./source/semihost_hardfault.o
-                0x000000000000730e                HardFault_Handler
+                0x00000000000072fe       0x2c ./source/semihost_hardfault.o
+                0x00000000000072fe                HardFault_Handler
  .text.map_uint32
-                0x000000000000733a       0x50 ./source/utils.o
-                0x000000000000733a                map_uint32
+                0x000000000000732a       0x50 ./source/utils.o
+                0x000000000000732a                map_uint32
  .text.bound_uint8
-                0x000000000000738a       0x38 ./source/utils.o
-                0x000000000000738a                bound_uint8
+                0x000000000000737a       0x38 ./source/utils.o
+                0x000000000000737a                bound_uint8
  .text.CLOCK_EnableClock
-                0x00000000000073c2       0x34 ./drivers/fsl_adc16.o
+                0x00000000000073b2       0x34 ./drivers/fsl_adc16.o
  .text.ADC16_DoAutoCalibration
-                0x00000000000073f6      0x10a ./drivers/fsl_adc16.o
-                0x00000000000073f6                ADC16_DoAutoCalibration
+                0x00000000000073e6      0x10a ./drivers/fsl_adc16.o
+                0x00000000000073e6                ADC16_DoAutoCalibration
  .text.ADC16_GetStatusFlags
-                0x0000000000007500       0x42 ./drivers/fsl_adc16.o
-                0x0000000000007500                ADC16_GetStatusFlags
+                0x00000000000074f0       0x42 ./drivers/fsl_adc16.o
+                0x00000000000074f0                ADC16_GetStatusFlags
  .text.OSC_SetExtRefClkConfig
-                0x0000000000007542       0x40 ./drivers/fsl_clock.o
+                0x0000000000007532       0x40 ./drivers/fsl_clock.o
  .text.OSC_SetCapLoad
-                0x0000000000007582       0x34 ./drivers/fsl_clock.o
+                0x0000000000007572       0x34 ./drivers/fsl_clock.o
  .text.CLOCK_GetPll0RefFreq
-                0x00000000000075b6        0xe ./drivers/fsl_clock.o
+                0x00000000000075a6        0xe ./drivers/fsl_clock.o
  .text.CLOCK_GetFixedFreqClkFreq
-                0x00000000000075c4       0x2e ./drivers/fsl_clock.o
-                0x00000000000075c4                CLOCK_GetFixedFreqClkFreq
+                0x00000000000075b4       0x2e ./drivers/fsl_clock.o
+                0x00000000000075b4                CLOCK_GetFixedFreqClkFreq
  .text.CLOCK_EnableClock
-                0x00000000000075f2       0x34 ./drivers/fsl_dmamux.o
+                0x00000000000075e2       0x34 ./drivers/fsl_dmamux.o
  .text.CLOCK_EnableClock
-                0x0000000000007626       0x34 ./drivers/fsl_dspi.o
+                0x0000000000007616       0x34 ./drivers/fsl_dspi.o
  .text.DSPI_Enable
-                0x000000000000765a       0x38 ./drivers/fsl_dspi.o
+                0x000000000000764a       0x38 ./drivers/fsl_dspi.o
  .text.DSPI_SetMasterSlaveMode
-                0x0000000000007692       0x2a ./drivers/fsl_dspi.o
+                0x0000000000007682       0x2a ./drivers/fsl_dspi.o
  .text.DSPI_IsMaster
-                0x00000000000076bc       0x1c ./drivers/fsl_dspi.o
+                0x00000000000076ac       0x1c ./drivers/fsl_dspi.o
  .text.DSPI_StartTransfer
-                0x00000000000076d8       0x20 ./drivers/fsl_dspi.o
+                0x00000000000076c8       0x20 ./drivers/fsl_dspi.o
  .text.DSPI_StopTransfer
-                0x00000000000076f8       0x20 ./drivers/fsl_dspi.o
+                0x00000000000076e8       0x20 ./drivers/fsl_dspi.o
  .text.DSPI_SetOnePcsPolarity
-                0x0000000000007718       0x4e ./drivers/fsl_dspi.o
+                0x0000000000007708       0x4e ./drivers/fsl_dspi.o
  .text.DSPI_MasterSetDelayScaler
-                0x0000000000007766       0xdc ./drivers/fsl_dspi.o
-                0x0000000000007766                DSPI_MasterSetDelayScaler
+                0x0000000000007756       0xdc ./drivers/fsl_dspi.o
+                0x0000000000007756                DSPI_MasterSetDelayScaler
  .text.DSPI_ClearStatusFlags
-                0x0000000000007842       0x1c ./drivers/fsl_dspi_edma.o
+                0x0000000000007832       0x1c ./drivers/fsl_dspi_edma.o
  .text.DSPI_EnableDMA
-                0x000000000000785e       0x22 ./drivers/fsl_dspi_edma.o
+                0x000000000000784e       0x22 ./drivers/fsl_dspi_edma.o
  .text.DSPI_DisableDMA
-                0x0000000000007880       0x24 ./drivers/fsl_dspi_edma.o
+                0x0000000000007870       0x24 ./drivers/fsl_dspi_edma.o
  .text.DSPI_MasterGetTxRegisterAddress
-                0x00000000000078a4       0x18 ./drivers/fsl_dspi_edma.o
+                0x0000000000007894       0x18 ./drivers/fsl_dspi_edma.o
  .text.DSPI_GetRxRegisterAddress
-                0x00000000000078bc       0x18 ./drivers/fsl_dspi_edma.o
+                0x00000000000078ac       0x18 ./drivers/fsl_dspi_edma.o
  .text.DSPI_StartTransfer
-                0x00000000000078d4       0x20 ./drivers/fsl_dspi_edma.o
+                0x00000000000078c4       0x20 ./drivers/fsl_dspi_edma.o
  .text.DSPI_StopTransfer
-                0x00000000000078f4       0x20 ./drivers/fsl_dspi_edma.o
+                0x00000000000078e4       0x20 ./drivers/fsl_dspi_edma.o
  .text.DSPI_FlushFifo
-                0x0000000000007914       0x3c ./drivers/fsl_dspi_edma.o
+                0x0000000000007904       0x3c ./drivers/fsl_dspi_edma.o
  .text.DSPI_MasterGetFormattedCommand
-                0x0000000000007950       0x4a ./drivers/fsl_dspi_edma.o
+                0x0000000000007940       0x4a ./drivers/fsl_dspi_edma.o
  .text.CLOCK_EnableClock
-                0x000000000000799a       0x34 ./drivers/fsl_edma.o
+                0x000000000000798a       0x34 ./drivers/fsl_edma.o
  .text.EnableIRQ
-                0x00000000000079ce       0x2c ./drivers/fsl_edma.o
+                0x00000000000079be       0x2c ./drivers/fsl_edma.o
  .text.DisableGlobalIRQ
-                0x00000000000079fa       0x20 ./drivers/fsl_edma.o
+                0x00000000000079ea       0x20 ./drivers/fsl_edma.o
  .text.EnableGlobalIRQ
-                0x0000000000007a1a       0x1e ./drivers/fsl_edma.o
+                0x0000000000007a0a       0x1e ./drivers/fsl_edma.o
  .text.FTM_ClearStatusFlags
-                0x0000000000007a38       0x68 ./drivers/fsl_ftm.o
-                0x0000000000007a38                FTM_ClearStatusFlags
+                0x0000000000007a28       0x68 ./drivers/fsl_ftm.o
+                0x0000000000007a28                FTM_ClearStatusFlags
  .text.GPIO_PinWrite
-                0x0000000000007aa0       0x36 ./drivers/fsl_gpio.o
+                0x0000000000007a90       0x36 ./drivers/fsl_gpio.o
  .text.I2C_MasterClearStatusFlags
-                0x0000000000007ad6       0x5a ./drivers/fsl_i2c.o
+                0x0000000000007ac6       0x5a ./drivers/fsl_i2c.o
  .text.I2C_CheckAndClearError
-                0x0000000000007b30       0x44 ./drivers/fsl_i2c.o
+                0x0000000000007b20       0x44 ./drivers/fsl_i2c.o
  .text.I2C_MasterStart
-                0x0000000000007b74       0x62 ./drivers/fsl_i2c.o
-                0x0000000000007b74                I2C_MasterStart
+                0x0000000000007b64       0x62 ./drivers/fsl_i2c.o
+                0x0000000000007b64                I2C_MasterStart
  .text.I2C_MasterRepeatedStart
-                0x0000000000007bd6       0x9a ./drivers/fsl_i2c.o
-                0x0000000000007bd6                I2C_MasterRepeatedStart
+                0x0000000000007bc6       0x9a ./drivers/fsl_i2c.o
+                0x0000000000007bc6                I2C_MasterRepeatedStart
  .text.I2C_MasterStop
-                0x0000000000007c70       0x3a ./drivers/fsl_i2c.o
-                0x0000000000007c70                I2C_MasterStop
+                0x0000000000007c60       0x3a ./drivers/fsl_i2c.o
+                0x0000000000007c60                I2C_MasterStop
  .text.I2C_MasterGetStatusFlags
-                0x0000000000007caa       0x4a ./drivers/fsl_i2c.o
-                0x0000000000007caa                I2C_MasterGetStatusFlags
+                0x0000000000007c9a       0x4a ./drivers/fsl_i2c.o
+                0x0000000000007c9a                I2C_MasterGetStatusFlags
  .text.I2C_MasterWriteBlocking
-                0x0000000000007cf4       0xdc ./drivers/fsl_i2c.o
-                0x0000000000007cf4                I2C_MasterWriteBlocking
+                0x0000000000007ce4       0xdc ./drivers/fsl_i2c.o
+                0x0000000000007ce4                I2C_MasterWriteBlocking
  .text.I2C_MasterReadBlocking
-                0x0000000000007dd0       0xdc ./drivers/fsl_i2c.o
-                0x0000000000007dd0                I2C_MasterReadBlocking
+                0x0000000000007dc0       0xdc ./drivers/fsl_i2c.o
+                0x0000000000007dc0                I2C_MasterReadBlocking
  .text.CLOCK_EnableClock
-                0x0000000000007eac       0x34 ./drivers/fsl_rnga.o
+                0x0000000000007e9c       0x34 ./drivers/fsl_rnga.o
  .text.CLOCK_DisableClock
-                0x0000000000007ee0       0x38 ./drivers/fsl_rnga.o
+                0x0000000000007ed0       0x38 ./drivers/fsl_rnga.o
  .text.rnga_ReadEntropy
-                0x0000000000007f18       0x36 ./drivers/fsl_rnga.o
+                0x0000000000007f08       0x36 ./drivers/fsl_rnga.o
  .text.RNGA_GetRandomData
-                0x0000000000007f4e       0x88 ./drivers/fsl_rnga.o
-                0x0000000000007f4e                RNGA_GetRandomData
+                0x0000000000007f3e       0x88 ./drivers/fsl_rnga.o
+                0x0000000000007f3e                RNGA_GetRandomData
  .text.RNGA_GetMode
-                0x0000000000007fd6       0x20 ./drivers/fsl_rnga.o
-                0x0000000000007fd6                RNGA_GetMode
+                0x0000000000007fc6       0x20 ./drivers/fsl_rnga.o
+                0x0000000000007fc6                RNGA_GetMode
  .text.CLOCK_EnableClock
-                0x0000000000007ff6       0x34 ./drivers/fsl_tpm.o
+                0x0000000000007fe6       0x34 ./drivers/fsl_tpm.o
  .text.TPM_EnableInterrupts
-                0x000000000000802a       0x70 ./drivers/fsl_tpm.o
-                0x000000000000802a                TPM_EnableInterrupts
+                0x000000000000801a       0x70 ./drivers/fsl_tpm.o
+                0x000000000000801a                TPM_EnableInterrupts
  .text.CLOCK_EnableClock
-                0x000000000000809a       0x34 ./drivers/fsl_uart.o
+                0x000000000000808a       0x34 ./drivers/fsl_uart.o
  .text.UART_GetStatusFlags
-                0x00000000000080ce       0x46 ./drivers/fsl_uart.o
-                0x00000000000080ce                UART_GetStatusFlags
+                0x00000000000080be       0x46 ./drivers/fsl_uart.o
+                0x00000000000080be                UART_GetStatusFlags
  .text.UART0_RX_TX_DriverIRQHandler
-                0x0000000000008114       0x10 ./drivers/fsl_uart.o
-                0x0000000000008114                UART0_RX_TX_DriverIRQHandler
+                0x0000000000008104       0x10 ./drivers/fsl_uart.o
+                0x0000000000008104                UART0_RX_TX_DriverIRQHandler
  .text.UART2_RX_TX_DriverIRQHandler
-                0x0000000000008124       0x10 ./drivers/fsl_uart.o
-                0x0000000000008124                UART2_RX_TX_DriverIRQHandler
+                0x0000000000008114       0x10 ./drivers/fsl_uart.o
+                0x0000000000008114                UART2_RX_TX_DriverIRQHandler
  .text.UART3_RX_TX_DriverIRQHandler
-                0x0000000000008134       0x10 ./drivers/fsl_uart.o
-                0x0000000000008134                UART3_RX_TX_DriverIRQHandler
+                0x0000000000008124       0x10 ./drivers/fsl_uart.o
+                0x0000000000008124                UART3_RX_TX_DriverIRQHandler
  .text.UART4_RX_TX_DriverIRQHandler
-                0x0000000000008144       0x10 ./drivers/fsl_uart.o
-                0x0000000000008144                UART4_RX_TX_DriverIRQHandler
+                0x0000000000008134       0x10 ./drivers/fsl_uart.o
+                0x0000000000008134                UART4_RX_TX_DriverIRQHandler
  .text.SystemInitHook
-                0x0000000000008154        0xe ./device/system_MK66F18.o
-                0x0000000000008154                SystemInitHook
+                0x0000000000008144        0xe ./device/system_MK66F18.o
+                0x0000000000008144                SystemInitHook
  .text.HAL_UartGetStatus
-                0x0000000000008162       0x22 ./component/uart/uart_adapter.o
+                0x0000000000008152       0x22 ./component/uart/uart_adapter.o
  .text.BOARD_InitDebugConsole
-                0x0000000000008184       0x22 ./board/board.o
-                0x0000000000008184                BOARD_InitDebugConsole
- .text.__main   0x00000000000081a6        0xe /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(_cr__main.o)
-                0x00000000000081a6                __main
-                0x00000000000081a6                __CR_SEMIHOST
- .text.memset   0x00000000000081b4        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(memset.o)
-                0x00000000000081b4                memset
+                0x0000000000008174       0x22 ./board/board.o
+                0x0000000000008174                BOARD_InitDebugConsole
+ .text.__main   0x0000000000008196        0xe /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(_cr__main.o)
+                0x0000000000008196                __main
+                0x0000000000008196                __CR_SEMIHOST
+ .text.memset   0x00000000000081a4        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(memset.o)
+                0x00000000000081a4                memset
  .text._deferredlazyseek
-                0x00000000000081b8       0x40 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_deferredlazyseek.o)
-                0x00000000000081b8                _deferredlazyseek
+                0x00000000000081a8       0x40 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_deferredlazyseek.o)
+                0x00000000000081a8                _deferredlazyseek
  .text.__flsbuf
-                0x00000000000081f8      0x140 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_deferredlazyseek.o)
-                0x00000000000081f8                __flsbuf
- .text._fflush  0x0000000000008338       0x52 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_fflush.o)
-                0x0000000000008338                _fflush
- .text.free     0x000000000000838a       0x30 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
-                0x000000000000838a                free
- .text.fputs    0x00000000000083ba       0x2c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fputs.o)
-                0x00000000000083ba                fputs
+                0x00000000000081e8      0x140 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_deferredlazyseek.o)
+                0x00000000000081e8                __flsbuf
+ .text._fflush  0x0000000000008328       0x52 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_fflush.o)
+                0x0000000000008328                _fflush
+ .text.free     0x000000000000837a       0x30 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
+                0x000000000000837a                free
+ .text.fputs    0x00000000000083aa       0x2c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fputs.o)
+                0x00000000000083aa                fputs
  .text.no_fp_display
-                0x00000000000083e6        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
- .text.strlen   0x00000000000083ea       0x4c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(strlen.o)
-                0x00000000000083ea                strlen
- .text._fdopen  0x0000000000008436       0x68 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_fdopen.o)
-                0x0000000000008436                _fdopen
- .text.fclose   0x000000000000849e       0x58 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fclose.o)
-                0x000000000000849e                fclose
- .text.remove   0x00000000000084f6       0x14 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(remove.o)
-                0x00000000000084f6                remove
+                0x00000000000083d6        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
+ .text.strlen   0x00000000000083da       0x4c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(strlen.o)
+                0x00000000000083da                strlen
+ .text._fdopen  0x0000000000008426       0x68 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_fdopen.o)
+                0x0000000000008426                _fdopen
+ .text.fclose   0x000000000000848e       0x58 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(fclose.o)
+                0x000000000000848e                fclose
+ .text.remove   0x00000000000084e6       0x14 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(remove.o)
+                0x00000000000084e6                remove
  .text._do_fflush
-                0x000000000000850a       0x40 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_do_fflush.o)
-                0x000000000000850a                _do_fflush
+                0x00000000000084fa       0x40 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(_do_fflush.o)
+                0x00000000000084fa                _do_fflush
  .text.__aeabi_division_uldivmod
-                0x000000000000854a      0x174 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libcr_eabihelpers.a(division_64.o)
-                0x000000000000854a                __aeabi_uldivmod
-                0x000000000000854e                __bhs_ldivmod1
+                0x000000000000853a      0x174 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libcr_eabihelpers.a(division_64.o)
+                0x000000000000853a                __aeabi_uldivmod
+                0x000000000000853e                __bhs_ldivmod1
  .text.__aeabi_division_idiv0
-                0x00000000000086be        0x2 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libcr_eabihelpers.a(division_idiv0.o)
-                0x00000000000086be                __aeabi_idiv0
+                0x00000000000086ae        0x2 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libcr_eabihelpers.a(division_idiv0.o)
+                0x00000000000086ae                __aeabi_idiv0
  .text.__aeabi_memset_lowlevel
-                0x00000000000086c0       0x32 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libcr_eabihelpers.a(memcpy.o)
-                0x00000000000086c0                __aeabi_lowlevel_memset
+                0x00000000000086b0       0x32 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libcr_eabihelpers.a(memcpy.o)
+                0x00000000000086b0                __aeabi_lowlevel_memset
  .text.__sys_close
-                0x00000000000086f2        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_close.o)
-                0x00000000000086f2                __sys_close
+                0x00000000000086e2        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_close.o)
+                0x00000000000086e2                __sys_close
  .text.__sys_flen
-                0x00000000000086fe        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_flen.o)
-                0x00000000000086fe                __sys_flen
+                0x00000000000086ee        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_flen.o)
+                0x00000000000086ee                __sys_flen
  .text.__sys_istty
-                0x000000000000870a        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_istty.o)
-                0x000000000000870a                __sys_istty
+                0x00000000000086fa        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_istty.o)
+                0x00000000000086fa                __sys_istty
  .text.__sys_remove
-                0x0000000000008716        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_remove.o)
-                0x0000000000008716                __sys_remove
+                0x0000000000008706        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_remove.o)
+                0x0000000000008706                __sys_remove
  .text.__sys_seek
-                0x0000000000008722        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_seek.o)
-                0x0000000000008722                __sys_seek
+                0x0000000000008712        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_seek.o)
+                0x0000000000008712                __sys_seek
  .text.__sys_tmpnam
-                0x000000000000872e        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_tmpnam.o)
-                0x000000000000872e                __sys_tmpnam
+                0x000000000000871e        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_tmpnam.o)
+                0x000000000000871e                __sys_tmpnam
  .text.__sys_write
-                0x000000000000873a        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_write.o)
-                0x000000000000873a                __sys_write
+                0x000000000000872a        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__sys_write.o)
+                0x000000000000872a                __sys_write
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.constdata) SORT_BY_ALIGNMENT(.constdata.*))
- *fill*         0x0000000000008746        0x2 ff
- .rodata        0x0000000000008748      0x1b7 ./utilities/fsl_debug_console.o
- *fill*         0x00000000000088ff        0x1 ff
- .rodata        0x0000000000008900       0x1a ./source/controller.o
- *fill*         0x000000000000891a        0x2 ff
- .rodata        0x000000000000891c       0xce ./source/leds.o
- *fill*         0x00000000000089ea        0x2 ff
- .rodata        0x00000000000089ec       0x80 ./source/msgeq07.o
- .rodata        0x0000000000008a6c        0xf ./source/random.o
- *fill*         0x0000000000008a7b        0x1 ff
- .rodata        0x0000000000008a7c       0x81 ./source/rtc.o
- *fill*         0x0000000000008afd        0x3 ff
+ *fill*         0x0000000000008736        0x2 ff
+ .rodata        0x0000000000008738      0x1b7 ./utilities/fsl_debug_console.o
+ *fill*         0x00000000000088ef        0x1 ff
+ .rodata        0x00000000000088f0       0x1a ./source/controller.o
+ *fill*         0x000000000000890a        0x2 ff
+ .rodata        0x000000000000890c       0xce ./source/leds.o
+ *fill*         0x00000000000089da        0x2 ff
+ .rodata        0x00000000000089dc       0x80 ./source/msgeq07.o
+ .rodata        0x0000000000008a5c        0xf ./source/random.o
+ *fill*         0x0000000000008a6b        0x1 ff
+ .rodata        0x0000000000008a6c       0x81 ./source/rtc.o
+ *fill*         0x0000000000008aed        0x3 ff
  .rodata.s_adc16Bases
-                0x0000000000008b00        0x8 ./drivers/fsl_adc16.o
+                0x0000000000008af0        0x8 ./drivers/fsl_adc16.o
  .rodata.s_adc16Clocks
-                0x0000000000008b08        0x8 ./drivers/fsl_adc16.o
- .rodata        0x0000000000008b10      0x13a ./drivers/fsl_adc16.o
- *fill*         0x0000000000008c4a        0x2 ff
- .rodata        0x0000000000008c4c      0x2a1 ./drivers/fsl_clock.o
- *fill*         0x0000000000008eed        0x3 ff
+                0x0000000000008af8        0x8 ./drivers/fsl_adc16.o
+ .rodata        0x0000000000008b00      0x13a ./drivers/fsl_adc16.o
+ *fill*         0x0000000000008c3a        0x2 ff
+ .rodata        0x0000000000008c3c      0x2a1 ./drivers/fsl_clock.o
+ *fill*         0x0000000000008edd        0x3 ff
  .rodata.fllFactorTable.8252
-                0x0000000000008ef0       0x10 ./drivers/fsl_clock.o
- .rodata        0x0000000000008f00       0x42 ./drivers/fsl_dmamux.o
- *fill*         0x0000000000008f42        0x2 ff
+                0x0000000000008ee0       0x10 ./drivers/fsl_clock.o
+ .rodata        0x0000000000008ef0       0x42 ./drivers/fsl_dmamux.o
+ *fill*         0x0000000000008f32        0x2 ff
  .rodata.s_baudratePrescaler
-                0x0000000000008f44       0x10 ./drivers/fsl_dspi.o
+                0x0000000000008f34       0x10 ./drivers/fsl_dspi.o
  .rodata.s_baudrateScaler
-                0x0000000000008f54       0x40 ./drivers/fsl_dspi.o
+                0x0000000000008f44       0x40 ./drivers/fsl_dspi.o
  .rodata.s_delayPrescaler
-                0x0000000000008f94       0x10 ./drivers/fsl_dspi.o
+                0x0000000000008f84       0x10 ./drivers/fsl_dspi.o
  .rodata.s_delayScaler
-                0x0000000000008fa4       0x40 ./drivers/fsl_dspi.o
+                0x0000000000008f94       0x40 ./drivers/fsl_dspi.o
  .rodata.s_dspiBases
-                0x0000000000008fe4        0xc ./drivers/fsl_dspi.o
+                0x0000000000008fd4        0xc ./drivers/fsl_dspi.o
  .rodata.s_dspiClock
-                0x0000000000008ff0        0xc ./drivers/fsl_dspi.o
- .rodata        0x0000000000008ffc      0x509 ./drivers/fsl_dspi.o
- *fill*         0x0000000000009505        0x3 ff
- .rodata        0x0000000000009508      0x4c1 ./drivers/fsl_dspi_edma.o
- *fill*         0x00000000000099c9        0x3 ff
+                0x0000000000008fe0        0xc ./drivers/fsl_dspi.o
+ .rodata        0x0000000000008fec      0x509 ./drivers/fsl_dspi.o
+ *fill*         0x00000000000094f5        0x3 ff
+ .rodata        0x00000000000094f8      0x4c1 ./drivers/fsl_dspi_edma.o
+ *fill*         0x00000000000099b9        0x3 ff
  .rodata.s_edmaIRQNumber
-                0x00000000000099cc       0x20 ./drivers/fsl_edma.o
- .rodata        0x00000000000099ec      0xbf0 ./drivers/fsl_edma.o
- .rodata        0x000000000000a5dc       0x63 ./drivers/fsl_gpio.o
- *fill*         0x000000000000a63f        0x1 ff
- .rodata        0x000000000000a640      0x2fa ./drivers/fsl_i2c.o
- *fill*         0x000000000000a93a        0x2 ff
+                0x00000000000099bc       0x20 ./drivers/fsl_edma.o
+ .rodata        0x00000000000099dc      0xbf0 ./drivers/fsl_edma.o
+ .rodata        0x000000000000a5cc       0x63 ./drivers/fsl_gpio.o
+ *fill*         0x000000000000a62f        0x1 ff
+ .rodata        0x000000000000a630      0x2fa ./drivers/fsl_i2c.o
+ *fill*         0x000000000000a92a        0x2 ff
  .rodata.s_tpmBases
-                0x000000000000a93c        0xc ./drivers/fsl_tpm.o
+                0x000000000000a92c        0xc ./drivers/fsl_tpm.o
  .rodata.s_tpmClocks
-                0x000000000000a948        0xc ./drivers/fsl_tpm.o
- .rodata        0x000000000000a954      0x357 ./drivers/fsl_tpm.o
- *fill*         0x000000000000acab        0x1 ff
+                0x000000000000a938        0xc ./drivers/fsl_tpm.o
+ .rodata        0x000000000000a944      0x357 ./drivers/fsl_tpm.o
+ *fill*         0x000000000000ac9b        0x1 ff
  .rodata.s_uartBases
-                0x000000000000acac       0x14 ./drivers/fsl_uart.o
+                0x000000000000ac9c       0x14 ./drivers/fsl_uart.o
  .rodata.s_uartClock
-                0x000000000000acc0       0x14 ./drivers/fsl_uart.o
- .rodata        0x000000000000acd4      0x514 ./drivers/fsl_uart.o
+                0x000000000000acb0       0x14 ./drivers/fsl_uart.o
+ .rodata        0x000000000000acc4      0x514 ./drivers/fsl_uart.o
  .rodata.s_UartAdapterBase
-                0x000000000000b1e8       0x14 ./component/uart/uart_adapter.o
- .rodata        0x000000000000b1fc      0x25e ./component/uart/uart_adapter.o
- *fill*         0x000000000000b45a        0x2 ff
- .rodata        0x000000000000b45c      0x521 ./component/serial_manager/serial_manager.o
- *fill*         0x000000000000b97d        0x3 ff
- .rodata        0x000000000000b980      0x244 ./component/serial_manager/serial_port_uart.o
+                0x000000000000b1d8       0x14 ./component/uart/uart_adapter.o
+ .rodata        0x000000000000b1ec      0x25e ./component/uart/uart_adapter.o
+ *fill*         0x000000000000b44a        0x2 ff
+ .rodata        0x000000000000b44c      0x521 ./component/serial_manager/serial_manager.o
+ *fill*         0x000000000000b96d        0x3 ff
+ .rodata        0x000000000000b970      0x244 ./component/serial_manager/serial_port_uart.o
  .rodata.mcgConfig_BOARD_BootClockRUN
-                0x000000000000bbc4        0xc ./board/clock_config.o
-                0x000000000000bbc4                mcgConfig_BOARD_BootClockRUN
+                0x000000000000bbb4        0xc ./board/clock_config.o
+                0x000000000000bbb4                mcgConfig_BOARD_BootClockRUN
  .rodata.simConfig_BOARD_BootClockRUN
-                0x000000000000bbd0        0x8 ./board/clock_config.o
-                0x000000000000bbd0                simConfig_BOARD_BootClockRUN
+                0x000000000000bbc0        0x8 ./board/clock_config.o
+                0x000000000000bbc0                simConfig_BOARD_BootClockRUN
  .rodata.oscConfig_BOARD_BootClockRUN
-                0x000000000000bbd8        0x8 ./board/clock_config.o
-                0x000000000000bbd8                oscConfig_BOARD_BootClockRUN
+                0x000000000000bbc8        0x8 ./board/clock_config.o
+                0x000000000000bbc8                oscConfig_BOARD_BootClockRUN
  .rodata.__num_Ciob_streams
-                0x000000000000bbe0        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__ciob.o)
-                0x000000000000bbe0                __num_Ciob_streams
+                0x000000000000bbd0        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__ciob.o)
+                0x000000000000bbd0                __num_Ciob_streams
  .rodata.__assertion_failed.str1.1
-                0x000000000000bbe4       0x15 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(_cr_assert.o)
+                0x000000000000bbd4       0x15 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(_cr_assert.o)
  .rodata._Csys_alloc.str1.1
-                0x000000000000bbf9       0x18 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
+                0x000000000000bbe9       0x18 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(alloc.o)
  .rodata._initio.str1.1
-                0x000000000000bc11        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(initio.o)
+                0x000000000000bc01        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(initio.o)
  .rodata.__vfprintf.str1.1
-                0x000000000000bc15       0x35 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
+                0x000000000000bc05       0x35 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(printf.o)
                                          0x38 (size before relaxing)
-                0x000000000000bc50                . = ALIGN (0x8)
- *fill*         0x000000000000bc4a        0x6 ff
+                0x000000000000bc40                . = ALIGN (0x8)
+ *fill*         0x000000000000bc3a        0x6 ff
 
-.glue_7         0x000000000000bc50        0x0
- .glue_7        0x000000000000bc50        0x0 linker stubs
+.glue_7         0x000000000000bc40        0x0
+ .glue_7        0x000000000000bc40        0x0 linker stubs
 
-.glue_7t        0x000000000000bc50        0x0
- .glue_7t       0x000000000000bc50        0x0 linker stubs
+.glue_7t        0x000000000000bc40        0x0
+ .glue_7t       0x000000000000bc40        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000bc50        0x0
- .vfp11_veneer  0x000000000000bc50        0x0 linker stubs
+.vfp11_veneer   0x000000000000bc40        0x0
+ .vfp11_veneer  0x000000000000bc40        0x0 linker stubs
 
-.v4_bx          0x000000000000bc50        0x0
- .v4_bx         0x000000000000bc50        0x0 linker stubs
+.v4_bx          0x000000000000bc40        0x0
+ .v4_bx         0x000000000000bc40        0x0 linker stubs
 
-.iplt           0x000000000000bc50        0x0
- .iplt          0x000000000000bc50        0x0 ./utilities/fsl_debug_console.o
+.iplt           0x000000000000bc40        0x0
+ .iplt          0x000000000000bc40        0x0 ./utilities/fsl_debug_console.o
 
-.rel.dyn        0x000000000000bc50        0x0
- .rel.iplt      0x000000000000bc50        0x0 ./utilities/fsl_debug_console.o
+.rel.dyn        0x000000000000bc40        0x0
+ .rel.iplt      0x000000000000bc40        0x0 ./utilities/fsl_debug_console.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
-                0x000000000000bc50                __exidx_start = .
+                0x000000000000bc40                __exidx_start = .
 
 .ARM.exidx
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
-                0x000000000000bc50                __exidx_end = .
-                0x000000000000bc50                _etext = .
+                0x000000000000bc40                __exidx_end = .
+                0x000000000000bc40                _etext = .
 
 .m_usb_data
  *(SORT_BY_ALIGNMENT(m_usb_bdt))
 
-.data_RAM2      0x000000001fff0000        0x0 load address 0x000000000000bc50
+.data_RAM2      0x000000001fff0000        0x0 load address 0x000000000000bc40
  FILL mask 0xff
                 [!provide]                        PROVIDE (__start_data_RAM2 = .)
  *(SORT_BY_ALIGNMENT(.ramfunc.$RAM2))
@@ -4706,7 +4706,7 @@ END GROUP
                 0x000000001fff0000                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (__end_data_RAM2 = .)
 
-.data_RAM3      0x0000000014000000        0x0 load address 0x000000000000bc50
+.data_RAM3      0x0000000014000000        0x0 load address 0x000000000000bc40
  FILL mask 0xff
                 [!provide]                        PROVIDE (__start_data_RAM3 = .)
  *(SORT_BY_ALIGNMENT(.ramfunc.$RAM3))
@@ -4725,7 +4725,7 @@ END GROUP
                 0x0000000020000000                . = ALIGN (0x8)
                 0x0000000020000000                _end_uninit_RESERVED = .
 
-.data           0x0000000020000000       0x60 load address 0x000000000000bc50
+.data           0x0000000020000000       0x60 load address 0x000000000000bc40
  FILL mask 0xff
                 0x0000000020000000                _data = .
  *(SORT_BY_ALIGNMENT(vtable))
@@ -4734,29 +4734,28 @@ END GROUP
  .data.events   0x0000000020000000       0x28 ./source/controller.o
                 0x0000000020000000                events
  .data.patterns
-                0x0000000020000028        0xc ./source/pattern.o
+                0x0000000020000028       0x10 ./source/pattern.o
                 0x0000000020000028                patterns
- .data.delay    0x0000000020000034        0x4 ./source/pattern.o
-                0x0000000020000034                delay
+ .data.delay    0x0000000020000038        0x4 ./source/pattern.o
+                0x0000000020000038                delay
  .data.randomPatterns
-                0x0000000020000038       0x14 ./source/pattern.o
-                0x0000000020000038                randomPatterns
+                0x000000002000003c       0x14 ./source/pattern.o
+                0x000000002000003c                randomPatterns
  .data.sparkle_currentHsv
-                0x000000002000004c        0x3 ./source/pattern.o
-                0x000000002000004c                sparkle_currentHsv
- *fill*         0x000000002000004f        0x1 ff
+                0x0000000020000050        0x3 ./source/pattern.o
+                0x0000000020000050                sparkle_currentHsv
+ *fill*         0x0000000020000053        0x1 ff
  .data.s_slowIrcFreq
-                0x0000000020000050        0x4 ./drivers/fsl_clock.o
- .data.s_fastIrcFreq
                 0x0000000020000054        0x4 ./drivers/fsl_clock.o
+ .data.s_fastIrcFreq
+                0x0000000020000058        0x4 ./drivers/fsl_clock.o
  .data.SystemCoreClock
-                0x0000000020000058        0x4 ./device/system_MK66F18.o
-                0x0000000020000058                SystemCoreClock
+                0x000000002000005c        0x4 ./device/system_MK66F18.o
+                0x000000002000005c                SystemCoreClock
                 0x0000000020000060                . = ALIGN (0x8)
- *fill*         0x000000002000005c        0x4 ff
                 0x0000000020000060                _edata = .
 
-.igot.plt       0x0000000020000060        0x0 load address 0x000000000000bcb0
+.igot.plt       0x0000000020000060        0x0 load address 0x000000000000bca0
  .igot.plt      0x0000000020000060        0x0 ./utilities/fsl_debug_console.o
 
 .bss_RAM2       0x000000001fff0000        0x0
@@ -4779,7 +4778,7 @@ END GROUP
                 0x0000000014000000                . = ALIGN ((. != 0x0)?0x8:0x1)
                 [!provide]                        PROVIDE (__end_bss_RAM3 = .)
 
-.bss            0x0000000020000060     0x9f80
+.bss            0x0000000020000060     0x2eb0
                 0x0000000020000060                . = ALIGN (0x8)
                 0x0000000020000060                _bss = .
  *(SORT_BY_ALIGNMENT(.bss*))
@@ -4792,191 +4791,191 @@ END GROUP
                 0x0000000020000080        0x4 ./source/controller.o
                 0x0000000020000080                commandIndex
  .bss.direction
-                0x0000000020000084       0x32 ./source/cursor.o
+                0x0000000020000084       0x1b ./source/cursor.o
                 0x0000000020000084                direction
- *fill*         0x00000000200000b6        0x2 
+ *fill*         0x000000002000009f        0x1 
  .bss.stepsLeft
-                0x00000000200000b8       0xc8 ./source/cursor.o
-                0x00000000200000b8                stepsLeft
- .bss.r         0x0000000020000180       0xc8 ./source/cursor.o
-                0x0000000020000180                r
+                0x00000000200000a0       0x6c ./source/cursor.o
+                0x00000000200000a0                stepsLeft
+ .bss.r         0x000000002000010c       0x6c ./source/cursor.o
+                0x000000002000010c                r
  .bss.linecolors
-                0x0000000020000248       0x96 ./source/cursor.o
-                0x0000000020000248                linecolors
- *fill*         0x00000000200002de        0x2 
+                0x0000000020000178       0x51 ./source/cursor.o
+                0x0000000020000178                linecolors
+ *fill*         0x00000000200001c9        0x3 
  .bss.dspiEdmaMasterRxRegToRxDataHandle
-                0x00000000200002e0       0x18 ./source/leds.o
-                0x00000000200002e0                dspiEdmaMasterRxRegToRxDataHandle
+                0x00000000200001cc       0x18 ./source/leds.o
+                0x00000000200001cc                dspiEdmaMasterRxRegToRxDataHandle
  .bss.dspiEdmaMasterTxDataToIntermediaryHandle
-                0x00000000200002f8       0x18 ./source/leds.o
-                0x00000000200002f8                dspiEdmaMasterTxDataToIntermediaryHandle
+                0x00000000200001e4       0x18 ./source/leds.o
+                0x00000000200001e4                dspiEdmaMasterTxDataToIntermediaryHandle
  .bss.dspiEdmaMasterIntermediaryToTxRegHandle
-                0x0000000020000310       0x18 ./source/leds.o
-                0x0000000020000310                dspiEdmaMasterIntermediaryToTxRegHandle
+                0x00000000200001fc       0x18 ./source/leds.o
+                0x00000000200001fc                dspiEdmaMasterIntermediaryToTxRegHandle
  .bss.dspi1EdmaMasterRxRegToRxDataHandle
-                0x0000000020000328       0x18 ./source/leds.o
-                0x0000000020000328                dspi1EdmaMasterRxRegToRxDataHandle
+                0x0000000020000214       0x18 ./source/leds.o
+                0x0000000020000214                dspi1EdmaMasterRxRegToRxDataHandle
  .bss.dspi1EdmaMasterTxDataToIntermediaryHandle
-                0x0000000020000340       0x18 ./source/leds.o
-                0x0000000020000340                dspi1EdmaMasterTxDataToIntermediaryHandle
+                0x000000002000022c       0x18 ./source/leds.o
+                0x000000002000022c                dspi1EdmaMasterTxDataToIntermediaryHandle
  .bss.dspi1EdmaMasterIntermediaryToTxRegHandle
-                0x0000000020000358       0x18 ./source/leds.o
-                0x0000000020000358                dspi1EdmaMasterIntermediaryToTxRegHandle
+                0x0000000020000244       0x18 ./source/leds.o
+                0x0000000020000244                dspi1EdmaMasterIntermediaryToTxRegHandle
  .bss.dspi2EdmaMasterRxRegToRxDataHandle
-                0x0000000020000370       0x18 ./source/leds.o
-                0x0000000020000370                dspi2EdmaMasterRxRegToRxDataHandle
+                0x000000002000025c       0x18 ./source/leds.o
+                0x000000002000025c                dspi2EdmaMasterRxRegToRxDataHandle
  .bss.dspi2EdmaMasterTxDataToIntermediaryHandle
-                0x0000000020000388       0x18 ./source/leds.o
-                0x0000000020000388                dspi2EdmaMasterTxDataToIntermediaryHandle
+                0x0000000020000274       0x18 ./source/leds.o
+                0x0000000020000274                dspi2EdmaMasterTxDataToIntermediaryHandle
  .bss.dspi2EdmaMasterIntermediaryToTxRegHandle
-                0x00000000200003a0       0x18 ./source/leds.o
-                0x00000000200003a0                dspi2EdmaMasterIntermediaryToTxRegHandle
+                0x000000002000028c       0x18 ./source/leds.o
+                0x000000002000028c                dspi2EdmaMasterIntermediaryToTxRegHandle
  .bss.g_dspi0_edma_m_handle
-                0x00000000200003b8       0x80 ./source/leds.o
-                0x00000000200003b8                g_dspi0_edma_m_handle
+                0x00000000200002a4       0x80 ./source/leds.o
+                0x00000000200002a4                g_dspi0_edma_m_handle
  .bss.g_dspi1_edma_m_handle
-                0x0000000020000438       0x80 ./source/leds.o
-                0x0000000020000438                g_dspi1_edma_m_handle
+                0x0000000020000324       0x80 ./source/leds.o
+                0x0000000020000324                g_dspi1_edma_m_handle
  .bss.g_dspi2_edma_m_handle
-                0x00000000200004b8       0x80 ./source/leds.o
-                0x00000000200004b8                g_dspi2_edma_m_handle
- .bss.spi0Xfer  0x0000000020000538       0x10 ./source/leds.o
-                0x0000000020000538                spi0Xfer
- .bss.spi1Xfer  0x0000000020000548       0x10 ./source/leds.o
-                0x0000000020000548                spi1Xfer
- .bss.spi2Xfer  0x0000000020000558       0x10 ./source/leds.o
-                0x0000000020000558                spi2Xfer
- .bss.leds0     0x0000000020000568     0x24f8 ./source/leds.o
-                0x0000000020000568                leds0
- .bss.leds1     0x0000000020002a60     0x24f8 ./source/leds.o
-                0x0000000020002a60                leds1
- .bss.leds2     0x0000000020004f58     0x24f8 ./source/leds.o
-                0x0000000020004f58                leds2
+                0x00000000200003a4       0x80 ./source/leds.o
+                0x00000000200003a4                g_dspi2_edma_m_handle
+ .bss.spi0Xfer  0x0000000020000424       0x10 ./source/leds.o
+                0x0000000020000424                spi0Xfer
+ .bss.spi1Xfer  0x0000000020000434       0x10 ./source/leds.o
+                0x0000000020000434                spi1Xfer
+ .bss.spi2Xfer  0x0000000020000444       0x10 ./source/leds.o
+                0x0000000020000444                spi2Xfer
+ .bss.leds0     0x0000000020000454      0x9d8 ./source/leds.o
+                0x0000000020000454                leds0
+ .bss.leds1     0x0000000020000e2c      0x9d8 ./source/leds.o
+                0x0000000020000e2c                leds1
+ .bss.leds2     0x0000000020001804      0x9d8 ./source/leds.o
+                0x0000000020001804                leds2
  .bss.currentPower
-                0x0000000020007450        0x4 ./source/leds.o
-                0x0000000020007450                currentPower
- .bss.tops      0x0000000020007454       0x32 ./source/linetetris.o
-                0x0000000020007454                tops
- *fill*         0x0000000020007486        0x2 
+                0x00000000200021dc        0x4 ./source/leds.o
+                0x00000000200021dc                currentPower
+ .bss.tops      0x00000000200021e0       0x1b ./source/linetetris.o
+                0x00000000200021e0                tops
+ *fill*         0x00000000200021fb        0x1 
  .bss.positions
-                0x0000000020007488       0x32 ./source/linetetris.o
-                0x0000000020007488                positions
- *fill*         0x00000000200074ba        0x2 
- .bss.size      0x00000000200074bc       0x32 ./source/linetetris.o
-                0x00000000200074bc                size
- *fill*         0x00000000200074ee        0x2 
- .bss.colors    0x00000000200074f0       0x96 ./source/linetetris.o
-                0x00000000200074f0                colors
- *fill*         0x0000000020007586        0x2 
- .bss.flashing  0x0000000020007588       0x32 ./source/linetetris.o
-                0x0000000020007588                flashing
- *fill*         0x00000000200075ba        0x2 
- .bss.off       0x00000000200075bc        0x3 ./source/linetetris.o
-                0x00000000200075bc                off
- *fill*         0x00000000200075bf        0x1 
+                0x00000000200021fc       0x1b ./source/linetetris.o
+                0x00000000200021fc                positions
+ *fill*         0x0000000020002217        0x1 
+ .bss.size      0x0000000020002218       0x1b ./source/linetetris.o
+                0x0000000020002218                size
+ *fill*         0x0000000020002233        0x1 
+ .bss.colors    0x0000000020002234       0x51 ./source/linetetris.o
+                0x0000000020002234                colors
+ *fill*         0x0000000020002285        0x3 
+ .bss.flashing  0x0000000020002288       0x1b ./source/linetetris.o
+                0x0000000020002288                flashing
+ *fill*         0x00000000200022a3        0x1 
+ .bss.off       0x00000000200022a4        0x3 ./source/linetetris.o
+                0x00000000200022a4                off
+ *fill*         0x00000000200022a7        0x1 
  .bss.lastCount
-                0x00000000200075c0        0x4 ./source/linetetris.o
-                0x00000000200075c0                lastCount
+                0x00000000200022a8        0x4 ./source/linetetris.o
+                0x00000000200022a8                lastCount
  .bss.adc16Channel1ConfigStruct
-                0x00000000200075c4        0x8 ./source/msgeq07.o
-                0x00000000200075c4                adc16Channel1ConfigStruct
+                0x00000000200022ac        0x8 ./source/msgeq07.o
+                0x00000000200022ac                adc16Channel1ConfigStruct
  .bss.adc16Channel2ConfigStruct
-                0x00000000200075cc        0x8 ./source/msgeq07.o
-                0x00000000200075cc                adc16Channel2ConfigStruct
- .bss.spectrum  0x00000000200075d4       0x38 ./source/msgeq07.o
-                0x00000000200075d4                spectrum
+                0x00000000200022b4        0x8 ./source/msgeq07.o
+                0x00000000200022b4                adc16Channel2ConfigStruct
+ .bss.spectrum  0x00000000200022bc       0x38 ./source/msgeq07.o
+                0x00000000200022bc                spectrum
  .bss.current_callback
-                0x000000002000760c        0x4 ./source/msgeq07.o
-                0x000000002000760c                current_callback
- .bss.hsv       0x0000000020007610        0x3 ./source/pattern.o
-                0x0000000020007610                hsv
- *fill*         0x0000000020007613        0x1 
+                0x00000000200022f4        0x4 ./source/msgeq07.o
+                0x00000000200022f4                current_callback
+ .bss.hsv       0x00000000200022f8        0x3 ./source/pattern.o
+                0x00000000200022f8                hsv
+ *fill*         0x00000000200022fb        0x1 
  .bss.clockCounter
-                0x0000000020007614        0x4 ./source/pattern.o
-                0x0000000020007614                clockCounter
+                0x00000000200022fc        0x4 ./source/pattern.o
+                0x00000000200022fc                clockCounter
  .bss.g_systickCounter
-                0x0000000020007618        0x4 ./source/pattern.o
-                0x0000000020007618                g_systickCounter
+                0x0000000020002300        0x4 ./source/pattern.o
+                0x0000000020002300                g_systickCounter
  .bss.currentLedsHsv
-                0x000000002000761c     0x27d8 ./source/pattern.o
-                0x000000002000761c                currentLedsHsv
+                0x0000000020002304      0xa20 ./source/pattern.o
+                0x0000000020002304                currentLedsHsv
  .bss.currentRandom
-                0x0000000020009df4        0x4 ./source/pattern.o
-                0x0000000020009df4                currentRandom
- .bss.data      0x0000000020009df8        0x4 ./source/random.o
-                0x0000000020009df8                data
- .bss._time     0x0000000020009dfc        0x8 ./source/rtc.o
-                0x0000000020009dfc                _time
+                0x0000000020002d24        0x4 ./source/pattern.o
+                0x0000000020002d24                currentRandom
+ .bss.data      0x0000000020002d28        0x4 ./source/random.o
+                0x0000000020002d28                data
+ .bss._time     0x0000000020002d2c        0x8 ./source/rtc.o
+                0x0000000020002d2c                _time
  .bss.timeStamp.8839
-                0x0000000020009e04       0x17 ./source/rtc.o
- *fill*         0x0000000020009e1b        0x1 
+                0x0000000020002d34       0x17 ./source/rtc.o
+ *fill*         0x0000000020002d4b        0x1 
  .bss.milisecondCounts
-                0x0000000020009e1c        0x4 ./source/scheduler.o
-                0x0000000020009e1c                milisecondCounts
+                0x0000000020002d4c        0x4 ./source/scheduler.o
+                0x0000000020002d4c                milisecondCounts
  .bss.s_extPllFreq
-                0x0000000020009e20        0x4 ./drivers/fsl_clock.o
+                0x0000000020002d50        0x4 ./drivers/fsl_clock.o
  .bss.g_xtal0Freq
-                0x0000000020009e24        0x4 ./drivers/fsl_clock.o
-                0x0000000020009e24                g_xtal0Freq
+                0x0000000020002d54        0x4 ./drivers/fsl_clock.o
+                0x0000000020002d54                g_xtal0Freq
  .bss.g_xtal32Freq
-                0x0000000020009e28        0x4 ./drivers/fsl_clock.o
-                0x0000000020009e28                g_xtal32Freq
+                0x0000000020002d58        0x4 ./drivers/fsl_clock.o
+                0x0000000020002d58                g_xtal32Freq
  .bss.g_dspiHandle
-                0x0000000020009e2c        0xc ./drivers/fsl_dspi.o
+                0x0000000020002d5c        0xc ./drivers/fsl_dspi.o
  .bss.s_dspiMasterIsr
-                0x0000000020009e38        0x4 ./drivers/fsl_dspi.o
+                0x0000000020002d68        0x4 ./drivers/fsl_dspi.o
  .bss.s_dspiSlaveIsr
-                0x0000000020009e3c        0x4 ./drivers/fsl_dspi.o
+                0x0000000020002d6c        0x4 ./drivers/fsl_dspi.o
  .bss.g_dspiDummyData
-                0x0000000020009e40        0x3 ./drivers/fsl_dspi.o
-                0x0000000020009e40                g_dspiDummyData
- *fill*         0x0000000020009e43        0x1 
+                0x0000000020002d70        0x3 ./drivers/fsl_dspi.o
+                0x0000000020002d70                g_dspiDummyData
+ *fill*         0x0000000020002d73        0x1 
  .bss.s_dspiMasterEdmaPrivateHandle
-                0x0000000020009e44       0x18 ./drivers/fsl_dspi_edma.o
+                0x0000000020002d74       0x18 ./drivers/fsl_dspi_edma.o
  .bss.s_EDMAHandle
-                0x0000000020009e5c       0x80 ./drivers/fsl_edma.o
+                0x0000000020002d8c       0x80 ./drivers/fsl_edma.o
  .bss.s_i2cHandle
-                0x0000000020009edc       0x10 ./drivers/fsl_i2c.o
+                0x0000000020002e0c       0x10 ./drivers/fsl_i2c.o
  .bss.s_i2cMasterIsr
-                0x0000000020009eec        0x4 ./drivers/fsl_i2c.o
+                0x0000000020002e1c        0x4 ./drivers/fsl_i2c.o
  .bss.s_i2cSlaveIsr
-                0x0000000020009ef0        0x4 ./drivers/fsl_i2c.o
+                0x0000000020002e20        0x4 ./drivers/fsl_i2c.o
  .bss.s_lpuartHandle
-                0x0000000020009ef4        0x4 ./drivers/fsl_lpuart.o
+                0x0000000020002e24        0x4 ./drivers/fsl_lpuart.o
  .bss.s_lpuartIsr
-                0x0000000020009ef8        0x4 ./drivers/fsl_lpuart.o
+                0x0000000020002e28        0x4 ./drivers/fsl_lpuart.o
  .bss.s_uartHandle
-                0x0000000020009efc       0x14 ./drivers/fsl_uart.o
+                0x0000000020002e2c       0x14 ./drivers/fsl_uart.o
  .bss.s_uartIsr
-                0x0000000020009f10        0x4 ./drivers/fsl_uart.o
- .bss.__Ciob    0x0000000020009f14       0xb4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__ciob.o)
-                0x0000000020009f14                __Ciob
+                0x0000000020002e40        0x4 ./drivers/fsl_uart.o
+ .bss.__Ciob    0x0000000020002e44       0xb4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_semihost_nf.a(__ciob.o)
+                0x0000000020002e44                __Ciob
  .bss.__end_of_heap
-                0x0000000020009fc8        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(__init_alloc.o)
-                0x0000000020009fc8                __end_of_heap
- .bss.__heaps   0x0000000020009fcc        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(__init_alloc.o)
-                0x0000000020009fcc                __heaps
- .bss.errno     0x0000000020009fd0        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(errno.o)
-                0x0000000020009fd0                errno
- .bss.mode      0x0000000020009fd4        0x1 ./source/controller.o
-                0x0000000020009fd4                mode
+                0x0000000020002ef8        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(__init_alloc.o)
+                0x0000000020002ef8                __end_of_heap
+ .bss.__heaps   0x0000000020002efc        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(__init_alloc.o)
+                0x0000000020002efc                __heaps
+ .bss.errno     0x0000000020002f00        0x4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libcr_c.a(errno.o)
+                0x0000000020002f00                errno
+ .bss.mode      0x0000000020002f04        0x1 ./source/controller.o
+                0x0000000020002f04                mode
  .bss.activeTransfer
-                0x0000000020009fd5        0x1 ./source/leds.o
-                0x0000000020009fd5                activeTransfer
- .bss.state     0x0000000020009fd6        0x1 ./source/msgeq07.o
-                0x0000000020009fd6                state
+                0x0000000020002f05        0x1 ./source/leds.o
+                0x0000000020002f05                activeTransfer
+ .bss.state     0x0000000020002f06        0x1 ./source/msgeq07.o
+                0x0000000020002f06                state
  .bss.currentRead
-                0x0000000020009fd7        0x1 ./source/msgeq07.o
-                0x0000000020009fd7                currentRead
+                0x0000000020002f07        0x1 ./source/msgeq07.o
+                0x0000000020002f07                currentRead
  .bss.autoEnabled
-                0x0000000020009fd8        0x1 ./source/scheduler.o
-                0x0000000020009fd8                autoEnabled
+                0x0000000020002f08        0x1 ./source/scheduler.o
+                0x0000000020002f08                autoEnabled
  .bss.StartInstanceNum.8467
-                0x0000000020009fd9        0x1 ./drivers/fsl_edma.o
+                0x0000000020002f09        0x1 ./drivers/fsl_edma.o
  *(SORT_BY_ALIGNMENT(COMMON))
-                0x0000000020009fe0                . = ALIGN (0x8)
- *fill*         0x0000000020009fda        0x6 
-                0x0000000020009fe0                _ebss = .
+                0x0000000020002f10                . = ALIGN (0x8)
+ *fill*         0x0000000020002f0a        0x6 
+                0x0000000020002f10                _ebss = .
                 [!provide]                        PROVIDE (end = .)
 
 .noinit_RAM2    0x000000001fff0000        0x0
@@ -4995,34 +4994,34 @@ END GROUP
  *(SORT_BY_ALIGNMENT(.noinit.$FLEX_RAM.*))
                 0x0000000014000000                . = ALIGN (0x8)
 
-.noinit         0x0000000020009fe0        0x0
-                0x0000000020009fe0                . = ALIGN (0x8)
-                0x0000000020009fe0                _noinit = .
+.noinit         0x0000000020002f10        0x0
+                0x0000000020002f10                . = ALIGN (0x8)
+                0x0000000020002f10                _noinit = .
  *(SORT_BY_ALIGNMENT(.noinit*))
-                0x0000000020009fe0                . = ALIGN (0x8)
-                0x0000000020009fe0                _end_noinit = .
+                0x0000000020002f10                . = ALIGN (0x8)
+                0x0000000020002f10                _end_noinit = .
                 0x0000000000001000                _HeapSize = 0x1000
 
-.heap           0x0000000020009fe0     0x1000
-                0x0000000020009fe0                _pvHeapStart = .
-                0x000000002000afe0                . = (. + _HeapSize)
- *fill*         0x0000000020009fe0     0x1000 
-                0x000000002000afe0                . = ALIGN (0x8)
-                0x000000002000afe0                _pvHeapLimit = .
+.heap           0x0000000020002f10     0x1000
+                0x0000000020002f10                _pvHeapStart = .
+                0x0000000020003f10                . = (. + _HeapSize)
+ *fill*         0x0000000020002f10     0x1000 
+                0x0000000020003f10                . = ALIGN (0x8)
+                0x0000000020003f10                _pvHeapLimit = .
                 0x0000000000001000                _StackSize = 0x1000
 
 .heap2stackfill
-                0x000000002000afe0     0x1000
-                0x000000002000bfe0                . = (. + _StackSize)
- *fill*         0x000000002000afe0     0x1000 
+                0x0000000020003f10     0x1000
+                0x0000000020004f10                . = (. + _StackSize)
+ *fill*         0x0000000020003f10     0x1000 
 
 .stack          0x000000002002f000        0x0
                 0x000000002002f000                _vStackBase = .
                 0x000000002002f000                . = ALIGN (0x8)
                 0x0000000020030000                _vStackTop = (. + _StackSize)
                 0x0000000000000000                _image_start = LOADADDR (.text)
-                0x000000000000bcb0                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x000000000000bcb0                _image_size = (_image_end - _image_start)
+                0x000000000000bca0                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x000000000000bca0                _image_size = (_image_end - _image_start)
 OUTPUT(Wall_project.axf elf32-littlearm)
 
 .debug_info     0x0000000000000000    0x234cd
@@ -5341,7 +5340,7 @@ OUTPUT(Wall_project.axf elf32-littlearm)
  .debug_line    0x0000000000011ede      0x334 ./board/board.o
  .debug_line    0x0000000000012212      0x3e3 ./board/clock_config.o
 
-.debug_str      0x0000000000000000    0xc55df
+.debug_str      0x0000000000000000    0xc55dd
  .debug_str     0x0000000000000000    0xb5411 ./utilities/fsl_debug_console.o
                                       0xb5503 (size before relaxing)
  .debug_str     0x00000000000b5411      0x930 ./startup/startup_mk66f18.o
@@ -5352,65 +5351,65 @@ OUTPUT(Wall_project.axf elf32-littlearm)
                                       0xb6767 (size before relaxing)
  .debug_str     0x00000000000b770a       0x85 ./source/cursor.o
                                        0x4663 (size before relaxing)
- .debug_str     0x00000000000b778f     0x2c73 ./source/leds.o
-                                      0xb8536 (size before relaxing)
- .debug_str     0x00000000000ba402       0x5c ./source/linetetris.o
+ .debug_str     0x00000000000b778f     0x2c71 ./source/leds.o
+                                      0xb8534 (size before relaxing)
+ .debug_str     0x00000000000ba400       0x5c ./source/linetetris.o
                                        0x4677 (size before relaxing)
- .debug_str     0x00000000000ba45e      0x966 ./source/main.o
-                                      0xb63c5 (size before relaxing)
- .debug_str     0x00000000000badc4      0xfcc ./source/msgeq07.o
+ .debug_str     0x00000000000ba45c      0x966 ./source/main.o
+                                      0xb63c3 (size before relaxing)
+ .debug_str     0x00000000000badc2      0xfcc ./source/msgeq07.o
                                       0xb707d (size before relaxing)
- .debug_str     0x00000000000bbd90      0x4ec ./source/pattern.o
-                                      0xb589b (size before relaxing)
- .debug_str     0x00000000000bc27c       0x3f ./source/power.o
+ .debug_str     0x00000000000bbd8e      0x4ec ./source/pattern.o
+                                      0xb5899 (size before relaxing)
+ .debug_str     0x00000000000bc27a       0x3f ./source/power.o
                                       0xb4489 (size before relaxing)
- .debug_str     0x00000000000bc2bb       0xb4 ./source/random.o
+ .debug_str     0x00000000000bc2b9       0xb4 ./source/random.o
                                       0xb4ca8 (size before relaxing)
- .debug_str     0x00000000000bc36f      0xe85 ./source/rtc.o
+ .debug_str     0x00000000000bc36d      0xe85 ./source/rtc.o
                                       0xb6b5c (size before relaxing)
- .debug_str     0x00000000000bd1f4      0x6f5 ./source/scheduler.o
+ .debug_str     0x00000000000bd1f2      0x6f5 ./source/scheduler.o
                                       0xb5e3b (size before relaxing)
- .debug_str     0x00000000000bd8e9       0x1f ./source/semihost_hardfault.o
+ .debug_str     0x00000000000bd8e7       0x1f ./source/semihost_hardfault.o
                                        0x2e9c (size before relaxing)
- .debug_str     0x00000000000bd908       0x47 ./source/utils.o
+ .debug_str     0x00000000000bd906       0x47 ./source/utils.o
                                        0x45cb (size before relaxing)
- .debug_str     0x00000000000bd94f      0x439 ./drivers/fsl_adc16.o
+ .debug_str     0x00000000000bd94d      0x439 ./drivers/fsl_adc16.o
                                       0xb52d2 (size before relaxing)
- .debug_str     0x00000000000bdd88     0x1ae5 ./drivers/fsl_clock.o
+ .debug_str     0x00000000000bdd86     0x1ae5 ./drivers/fsl_clock.o
                                       0xb6a40 (size before relaxing)
- .debug_str     0x00000000000bf86d       0x90 ./drivers/fsl_dmamux.o
+ .debug_str     0x00000000000bf86b       0x90 ./drivers/fsl_dmamux.o
                                       0xb4938 (size before relaxing)
- .debug_str     0x00000000000bf8fd      0xb91 ./drivers/fsl_dspi.o
+ .debug_str     0x00000000000bf8fb      0xb91 ./drivers/fsl_dspi.o
                                       0xb6412 (size before relaxing)
- .debug_str     0x00000000000c048e      0x727 ./drivers/fsl_dspi_edma.o
+ .debug_str     0x00000000000c048c      0x727 ./drivers/fsl_dspi_edma.o
                                       0xb59a3 (size before relaxing)
- .debug_str     0x00000000000c0bb5      0xe36 ./drivers/fsl_edma.o
+ .debug_str     0x00000000000c0bb3      0xe36 ./drivers/fsl_edma.o
                                       0xb65ac (size before relaxing)
- .debug_str     0x00000000000c19eb      0x931 ./drivers/fsl_ftm.o
+ .debug_str     0x00000000000c19e9      0x931 ./drivers/fsl_ftm.o
                                       0xb5830 (size before relaxing)
- .debug_str     0x00000000000c231c       0xcb ./drivers/fsl_gpio.o
+ .debug_str     0x00000000000c231a       0xcb ./drivers/fsl_gpio.o
                                       0xb470a (size before relaxing)
- .debug_str     0x00000000000c23e7      0xa84 ./drivers/fsl_i2c.o
+ .debug_str     0x00000000000c23e5      0xa84 ./drivers/fsl_i2c.o
                                       0xb5cdb (size before relaxing)
- .debug_str     0x00000000000c2e6b      0xdb3 ./drivers/fsl_lpuart.o
+ .debug_str     0x00000000000c2e69      0xdb3 ./drivers/fsl_lpuart.o
                                       0xb5e72 (size before relaxing)
- .debug_str     0x00000000000c3c1e      0x48d ./drivers/fsl_rnga.o
+ .debug_str     0x00000000000c3c1c      0x48d ./drivers/fsl_rnga.o
                                       0xb4691 (size before relaxing)
- .debug_str     0x00000000000c40ab      0x527 ./drivers/fsl_tpm.o
+ .debug_str     0x00000000000c40a9      0x527 ./drivers/fsl_tpm.o
                                       0xb54d3 (size before relaxing)
- .debug_str     0x00000000000c45d2      0x3c8 ./drivers/fsl_uart.o
+ .debug_str     0x00000000000c45d0      0x3c8 ./drivers/fsl_uart.o
                                       0xb5e4d (size before relaxing)
- .debug_str     0x00000000000c499a       0xb5 ./device/system_MK66F18.o
+ .debug_str     0x00000000000c4998       0xb5 ./device/system_MK66F18.o
                                       0xb30bd (size before relaxing)
- .debug_str     0x00000000000c4a4f      0x30b ./component/uart/uart_adapter.o
+ .debug_str     0x00000000000c4a4d      0x30b ./component/uart/uart_adapter.o
                                       0xb4bc5 (size before relaxing)
- .debug_str     0x00000000000c4d5a      0x36c ./component/serial_manager/serial_manager.o
+ .debug_str     0x00000000000c4d58      0x36c ./component/serial_manager/serial_manager.o
                                       0xb4562 (size before relaxing)
- .debug_str     0x00000000000c50c6       0xfc ./component/serial_manager/serial_port_uart.o
+ .debug_str     0x00000000000c50c4       0xfc ./component/serial_manager/serial_port_uart.o
                                       0xb460f (size before relaxing)
- .debug_str     0x00000000000c51c2       0x37 ./board/board.o
+ .debug_str     0x00000000000c51c0       0x37 ./board/board.o
                                       0xb5978 (size before relaxing)
- .debug_str     0x00000000000c51f9      0x3e6 ./board/clock_config.o
+ .debug_str     0x00000000000c51f7      0x3e6 ./board/clock_config.o
                                       0xb4f86 (size before relaxing)
 
 .comment        0x0000000000000000       0x75

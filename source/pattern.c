@@ -151,6 +151,7 @@ void initPatterns(){
 // Patterns
 #define num_patterns 3
 PatternFunc patterns[] = {
+		rainbowPattern,
 		RandomPatterns,
 		rainbowPattern,
 		monoVuMeter
