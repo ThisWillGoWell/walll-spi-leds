@@ -191,7 +191,7 @@ void runPatterns(){
 	while(1){
 		//rainbowPattern(clockCounter);
 		patterns[bound_uint8(getMode(), 0, num_patterns-1)](clockCounter);
-		SysTick_DelayTicks(delay); //delay 10 ms
+		SysTick_DelayTicks(100); //delay 10 ms
 		clockCounter += 1;
 
 	}
