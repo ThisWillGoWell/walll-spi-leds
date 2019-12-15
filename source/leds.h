@@ -9,7 +9,7 @@
 #define LEDS_H_
 
 
-#define NUM_LEDS_PER_BUS 288U
+#define NUM_LEDS_PER_BUS 1U
 #define NUM_LEDS NUM_LEDS_PER_BUS * 3
 #define TRANSFER_BAUDRATE 1000000U //1400000U /* Transfer baudrate - 14.5MHz */5
 #define END_BYTES 100

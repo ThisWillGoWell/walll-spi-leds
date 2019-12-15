@@ -16,8 +16,8 @@ void setLedHsv(int tube, uint32_t i, HsvColor c);
 void setLedRgb(int tube, uint32_t i, RgbColor c);
 
 
-	#define NUM_TUBES 27
-	#define LEDS_PER_TUBE 32
+	#define NUM_TUBES 1
+	#define LEDS_PER_TUBE 1
 	void runPatterns(void);
 	void initPatterns(void);
 	void fade_all_and_set(uint8_t amount);
